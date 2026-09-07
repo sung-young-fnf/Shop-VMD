@@ -1,0 +1,58 @@
+{
+  "name": "Pine House — measured farmhouse reconstruction",
+  "version": 1,
+  "units": "metres",
+  "coordinates": {"up": "+Y", "front": "+Z", "planTransform": "x=(pixelX*2048/2550-1150)/68; z=(pixelY*2048/2550-610)/68", "workingImageWidth": 2048, "originalImageWidth": 2550, "floor": 0.42},
+  "sourceManifest": [
+    {"path":"test_house_reference/test_house.jpg","width":2550,"height":1534,"role":"plan","sha256":"b113e96f893f76c9673e14a55b77e42a39a7ccc94657e24df3969a5c060d0102"},
+    {"path":"test_house_reference/test_house_outdoor.jpg","width":2550,"height":1700,"role":"exterior","sha256":"219227e9ae83c62b9ded0aca0b426e6776d5c701cd4cf905f204ecbcb3f17a95"},
+    {"path":"test_house_reference/test_house_front.jpg","width":120,"height":80,"role":"front-elevation","sha256":"f697c04211d720af3eca1322112b24d82c209696bd87672af41fe51c5dad7e9b"},
+    {"path":"test_house_reference/test_house_back.jpg","width":120,"height":80,"role":"rear-elevation","sha256":"8d39d1a94507c60be7855a0dc46fcd851d69edc7f48337640911dffb6fd9b653"},
+    {"path":"test_house_reference/test_house_left.jpg","width":120,"height":80,"role":"left-elevation","sha256":"4916eea46e841cf28de0a33c224c34bcaee83aa89890bf723903e15676732688"},
+    {"path":"test_house_reference/test_house_right.jpg","width":120,"height":80,"role":"right-elevation","sha256":"6d28f884321fc6ca502a2c374fd51ef90b1531dedfcb0af539ede842e8a2e1e0"}
+  ],
+  "calibration": [
+    {"axis":"x","annotation":"Garage clear width 23 ft 10 in; interior faces in original 2550px plan","metres":7.2644,"pixels":618,"pixelsPerMetre":85.072408},
+    {"axis":"z","annotation":"Garage clear depth 31 ft 6 in; interior faces in original 2550px plan","metres":9.6012,"pixels":814,"pixelsPerMetre":84.781068}
+  ],
+  "rooms": [
+    {"id":"living","dimensionsMetres":[8.2804,6.0452],"sourceDimension":"27 ft 2 in × 19 ft 10 in","confidence":"measured"},
+    {"id":"kitchen","dimensionsMetres":[2.8956,6.0452],"sourceDimension":"9 ft 6 in × 19 ft 10 in","confidence":"measured"},
+    {"id":"primary","dimensionsMetres":[4.064,4.7244],"sourceDimension":"13 ft 4 in × 15 ft 6 in","confidence":"measured"},
+    {"id":"bedroom2","dimensionsMetres":[3.6576,3.4036],"sourceDimension":"12 ft × 11 ft 2 in","confidence":"measured"},
+    {"id":"bedroom3","dimensionsMetres":[3.5052,3.5052],"sourceDimension":"11 ft 6 in × 11 ft 6 in","confidence":"measured"},
+    {"id":"flex","dimensionsMetres":[3.556,3.4036],"sourceDimension":"11 ft 8 in × 11 ft 2 in; adjacent closet included in model floor selection","confidence":"measured"},
+    {"id":"garage","dimensionsMetres":[7.2644,9.6012],"sourceDimension":"23 ft 10 in × 31 ft 6 in","confidence":"measured"},
+    {"id":"porch","dimensionsMetres":[15.0876,3.6576],"sourceDimension":"Front porch 49 ft 6 in × 12 ft","confidence":"measured"}
+  ],
+  "expectedAssemblies": ["foundation","roof-assembly","upper-envelope","wraparound-porch","brick-chimney","interior-cutaway-walls","furnished-interior","kitchen-and-service-fixtures"],
+  "referenceAuthority": {"plan": "test_house_reference/test_house.jpg", "appearance": "test_house_reference/test_house_outdoor.jpg", "elevations": ["test_house_front.jpg", "test_house_back.jpg", "test_house_left.jpg", "test_house_right.jpg"]},
+  "qualityContract": {
+    "representation": "Architectural procedural reconstruction with inferred furniture and simplified construction details",
+    "critical": ["Long charcoal standing-seam gable roof", "Lower wraparound porch on timber columns", "White board-and-batten walls and black mullioned openings", "Two front garage bays plus side bay", "Floor-plan-derived rooms and rear bedroom projection", "Brick chimney on the left gable"],
+    "verification": ["Front three-quarter silhouette", "Rear three-quarter wing and openings", "Roof-off plan alignment", "Room picking and explodable roof", "Night emissive glazing"],
+    "targetTriangles": 180000,
+    "targetDrawCalls": 900,
+    "approximation": "Elevation thumbnails lack readable dimensioning; roof slopes, wall thickness, furniture and concealed structure inferred. Room labels preserve supplied plan dimensions."
+  },
+  "hierarchy": {
+    "house": {
+      "foundation": ["main-slab", "rear-wing-slab", "porch-slabs", "brick-steps"],
+      "envelope": ["split-wall-spans", "board-batten-instances", "door-and-window-frames", "glazing", "garage-panels", "corner-trim"],
+      "interior": ["room-floors", "partition-walls", "living-seating", "dining-table", "kitchen-island", "kitchen-cabinets", "bedrooms", "bath-fixtures", "laundry", "garage-storage"],
+      "porch": ["timber-columns", "column-bases-capitals", "timber-beams", "armchairs", "brick-edging"],
+      "roof": ["main-gable-panels", "standing-seam-instances", "gable-infill", "porch-shed-panels", "rear-wing-roof", "ridge-cap", "fascia", "brick-chimney", "chimney-cap"]
+    }
+  },
+  "materials": {
+    "cladding": {"color": "#eee9dc", "roughness": 0.83, "evidence": "Outdoor photograph: warm off-white flat-painted vertical battens"},
+    "roof": {"color": "#343d3f", "roughness": 0.49, "metalness": 0.38, "localFeatures": "Raised seams at 0.38m intervals"},
+    "timber": {"color": "#76533a", "roughness": 0.85, "localFeatures": "Darker bases, lighter beam caps, restrained procedural grain"},
+    "brick": {"color": "#9c705c", "roughness": 0.94, "localFeatures": "Staggered brick joints and stone chimney cap"},
+    "windowFrames": {"color": "#202827", "roughness": 0.42},
+    "glass": {"color": "#afc5bf", "roughness": 0.22, "emissive": "#ffb95b", "nightIntensity": 0.65},
+    "floors": {"color": "#c8ab7c", "roughness": 0.8, "confidence": "inferred"}
+  },
+  "partConfidence": {"footprint": "high — measured from plan", "openings": "high — plan and exterior photograph", "roof": "medium — photograph plus small elevations", "furniture": "inferred except kitchen island and plumbing fixtures", "rearWingRoof": "medium — inferred connection from plan and rear elevation"},
+  "interaction": {"pick": "roomId on floor geometry", "cutaway": "roof hidden and walls reduced to 1.1m", "explode": "roof translated +5m", "night": "warm glazing and fixture emission"}
+}

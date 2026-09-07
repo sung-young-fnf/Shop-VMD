@@ -1,0 +1,123 @@
+[
+  {
+    "file": "p103_2f_hvac_plan.png",
+    "pdf_page": 103,
+    "crop_pdf_points": [
+      240,
+      95,
+      955,
+      705
+    ],
+    "render_scale": 2,
+    "purpose": "2층 코어와 실명 및 냉방기 신설 위치",
+    "component_codes": [
+      "2F-HVAC"
+    ]
+  },
+  {
+    "file": "p104_3f_hvac_plan.png",
+    "pdf_page": 104,
+    "crop_pdf_points": [
+      240,
+      95,
+      955,
+      705
+    ],
+    "render_scale": 2,
+    "purpose": "3층 VOID·계단·화장실·리프트와 냉방기 위치",
+    "component_codes": [
+      "3F-HVAC"
+    ]
+  },
+  {
+    "file": "p105_2f_storage_plan.png",
+    "pdf_page": 105,
+    "crop_pdf_points": [
+      240,
+      95,
+      955,
+      705
+    ],
+    "render_scale": 2,
+    "purpose": "2층 앵글장 배치 및 전체 치수",
+    "component_codes": [
+      "2F-ANGLE"
+    ]
+  },
+  {
+    "file": "p105_racks_upper_detail.png",
+    "pdf_page": 105,
+    "crop_pdf_points": [
+      475,
+      170,
+      870,
+      440
+    ],
+    "render_scale": 4,
+    "purpose": "상단 코어 주변 앵글장과 통로 치수",
+    "component_codes": [
+      "2F-ANGLE"
+    ]
+  },
+  {
+    "file": "p105_racks_lower_locker_detail.png",
+    "pdf_page": 105,
+    "crop_pdf_points": [
+      420,
+      425,
+      870,
+      630
+    ],
+    "render_scale": 4,
+    "purpose": "하단 앵글장·철제 캐비넷 치수와 배치",
+    "component_codes": [
+      "2F-ANGLE",
+      "2F-LOCKER"
+    ]
+  },
+  {
+    "file": "p106_rack_elevation_detail.png",
+    "pdf_page": 106,
+    "crop_pdf_points": [
+      135,
+      60,
+      690,
+      740
+    ],
+    "render_scale": 2,
+    "purpose": "앵글장 4단 구성·높이·상부 여유 치수",
+    "component_codes": [
+      "ANGLE-UNIT"
+    ]
+  },
+  {
+    "file": "p106_rack_quantity_note.png",
+    "pdf_page": 106,
+    "crop_pdf_points": [
+      755,
+      400,
+      1070,
+      520
+    ],
+    "render_scale": 3,
+    "purpose": "신규 선반 424개·앵글 106조·기둥 272개 원문",
+    "component_codes": [
+      "ANGLE-QUANTITY"
+    ]
+  },
+  {
+    "file": "p104_right_hvac_detail.png",
+    "pdf_page": 104,
+    "crop_pdf_points": [
+      730,
+      380,
+      875,
+      510
+    ],
+    "render_scale": 4,
+    "purpose": "3층 우측 스탠드에어컨 40PY 원문 시각 재검증",
+    "component_codes": [
+      "3F-HVAC"
+    ]
+  }
+]

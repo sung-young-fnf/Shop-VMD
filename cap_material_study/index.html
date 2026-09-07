@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="네이비 볼캡의 원단과 봉제 구조를 살펴보는 3D 재질 스터디" />
+    <link rel="icon" href="data:," />
+    <title>Cap — Material Study</title>
+  </head>
+  <body>
+    <header><h1>Cap <span>/ MATERIAL STUDY</span></h1><p>형태 초안 · 원단과 자수 미완성</p></header>
+    <main>
+      <section id="comparison" aria-label="같은 형태의 모자 재질 비교"><p id="status" role="status">재질을 불러오는 중…</p><section id="studio" class="comparison-pane" aria-label="A 절차적 원단 3D 뷰어"><h2 class="variant-label">A · 절차적 원단</h2></section><section id="studio-image" class="comparison-pane" aria-label="B 사진 텍스처 3D 뷰어"><h2 class="variant-label">B · 사진 텍스처</h2></section><div class="canvas-note">같은 형태 · 시점과 조명 동기화 · 클릭하여 부품 선택</div></section>
+      <aside aria-label="재질 검사 제어">
+        <figure><img src="/reference/cap-rgba.png" width="180" height="220" alt="재구성의 기준이 된 네이비 NY 볼캡 원본" /><figcaption>REFERENCE <span>원본 이미지</span></figcaption></figure>
+        <section class="control-section"><h2>시점</h2><div class="button-grid" id="views"><button data-view="reference" aria-pressed="true">원본 시점</button><button data-view="front" aria-pressed="false">정면</button><button data-view="rear" aria-pressed="false">후면</button><button data-view="closeup" aria-pressed="false">원단 확대</button></div></section>
+        <section class="control-section"><h2>빛과 표면</h2><div class="button-row" id="lights"><button data-light="neutral" aria-pressed="true">중립</button><button data-light="grazing" aria-pressed="false">사광</button><button data-light="reference" aria-pressed="false">원본</button><button data-light="albedo" aria-pressed="false">색상만</button></div><label for="light-angle">조명 각도 <output id="angle-value">−35°</output></label><input id="light-angle" type="range" min="-180" max="180" value="-35" /><label for="texture">원단 요철 <output id="texture-value">100%</output></label><input id="texture" type="range" min="0" max="200" value="100" /></section>
+        <section class="control-section"><h2>구조</h2><label for="part">부품 선택</label><select id="part"><option value="">전체 보기</option></select><label for="explode">분해 <output id="explode-value">0%</output></label><input id="explode" type="range" min="0" max="100" value="0" /><p id="part-status" aria-live="polite">전체 부품</p></section>
+        <div class="footer-controls"><label class="toggle"><input id="rotate" type="checkbox" /> 자동 회전</label><button id="restore">초기화</button></div>
+      </aside>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

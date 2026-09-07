@@ -1,0 +1,606 @@
+[
+  {
+    "file": "p059_hg_a_drawing.png",
+    "pdf_page": 59,
+    "crop_pdf_points": [
+      47.64,
+      16.84,
+      1185.045,
+      745.17
+    ],
+    "render_scale": 3,
+    "purpose": "집기 형상, 전체 치수와 상세 및 원본 참조사진 확인",
+    "component_codes": [
+      "ML-M-01 HG(A)"
+    ]
+  },
+  {
+    "file": "p060_hg_b_drawing.png",
+    "pdf_page": 60,
+    "crop_pdf_points": [
+      47.64,
+      16.84,
+      1185.045,
+      745.17
+    ],
+    "render_scale": 3,
+    "purpose": "집기 형상, 전체 치수와 상세 및 원본 참조사진 확인",
+    "component_codes": [
+      "ML-M-01 HG(B)"
+    ]
+  },
+  {
+    "file": "p061_hg_c_drawing.png",
+    "pdf_page": 61,
+    "crop_pdf_points": [
+      47.64,
+      16.84,
+      1185.045,
+      745.17
+    ],
+    "render_scale": 3,
+    "purpose": "집기 형상, 전체 치수와 상세 및 원본 참조사진 확인",
+    "component_codes": [
+      "ML-M-01 HG(C)"
+    ]
+  },
+  {
+    "file": "p062_hg_d_drawing.png",
+    "pdf_page": 62,
+    "crop_pdf_points": [
+      47.64,
+      16.84,
+      1185.045,
+      745.17
+    ],
+    "render_scale": 3,
+    "purpose": "집기 형상, 전체 치수와 상세 및 원본 참조사진 확인",
+    "component_codes": [
+      "ML-M-01 HG(D)"
+    ]
+  },
+  {
+    "file": "p063_hanger_bracket_drawing.png",
+    "pdf_page": 63,
+    "crop_pdf_points": [
+      47.64,
+      16.84,
+      1185.045,
+      745.17
+    ],
+    "render_scale": 3,
+    "purpose": "집기 형상, 전체 치수와 상세 및 원본 참조사진 확인",
+    "component_codes": [
+      "ML-W-04_SH"
+    ]
+  },
+  {
+    "file": "p064_hg_e_drawing.png",
+    "pdf_page": 64,
+    "crop_pdf_points": [
+      47.64,
+      16.84,
+      1185.045,
+      745.17
+    ],
+    "render_scale": 3,
+    "purpose": "집기 형상, 전체 치수와 상세 및 원본 참조사진 확인",
+    "component_codes": [
+      "ML-M-01 HG(E)"
+    ]
+  },
+  {
+    "file": "p065_hg_f_drawing.png",
+    "pdf_page": 65,
+    "crop_pdf_points": [
+      47.64,
+      16.84,
+      1185.045,
+      745.17
+    ],
+    "render_scale": 3,
+    "purpose": "집기 형상, 전체 치수와 상세 및 원본 참조사진 확인",
+    "component_codes": [
+      "ML-M-01 HG(F)"
+    ]
+  },
+  {
+    "file": "p066_rack_photo_drawing.png",
+    "pdf_page": 66,
+    "crop_pdf_points": [
+      47.64,
+      16.84,
+      1185.045,
+      745.17
+    ],
+    "render_scale": 3,
+    "purpose": "집기 형상, 전체 치수와 상세 및 원본 참조사진 확인",
+    "component_codes": [
+      "ML-M-01 HG(A-F)"
+    ]
+  },
+  {
+    "file": "p067_stool_1550_drawing.png",
+    "pdf_page": 67,
+    "crop_pdf_points": [
+      47.64,
+      16.84,
+      1185.045,
+      745.17
+    ],
+    "render_scale": 3,
+    "purpose": "집기 형상, 전체 치수와 상세 및 원본 참조사진 확인",
+    "component_codes": [
+      "STOOL(1550)"
+    ]
+  },
+  {
+    "file": "p068_dp_t_drawing.png",
+    "pdf_page": 68,
+    "crop_pdf_points": [
+      47.64,
+      16.84,
+      1185.045,
+      745.17
+    ],
+    "render_scale": 3,
+    "purpose": "집기 형상, 전체 치수와 상세 및 원본 참조사진 확인",
+    "component_codes": [
+      "DP-T"
+    ]
+  },
+  {
+    "file": "p069_counter_drawing.png",
+    "pdf_page": 69,
+    "crop_pdf_points": [
+      47.64,
+      16.84,
+      1185.045,
+      745.17
+    ],
+    "render_scale": 3,
+    "purpose": "집기 형상, 전체 치수와 상세 및 원본 참조사진 확인",
+    "component_codes": [
+      "COUNTER"
+    ]
+  },
+  {
+    "file": "p070_counter_layers_drawing.png",
+    "pdf_page": 70,
+    "crop_pdf_points": [
+      47.64,
+      16.84,
+      1185.045,
+      745.17
+    ],
+    "render_scale": 3,
+    "purpose": "집기 형상, 전체 치수와 상세 및 원본 참조사진 확인",
+    "component_codes": [
+      "COUNTER"
+    ]
+  },
+  {
+    "file": "p071_counter_cabinet_drawing.png",
+    "pdf_page": 71,
+    "crop_pdf_points": [
+      47.64,
+      16.84,
+      1185.045,
+      745.17
+    ],
+    "render_scale": 3,
+    "purpose": "집기 형상, 전체 치수와 상세 및 원본 참조사진 확인",
+    "component_codes": [
+      "COUNTER"
+    ]
+  },
+  {
+    "file": "p072_counter_guard_drawing.png",
+    "pdf_page": 72,
+    "crop_pdf_points": [
+      47.64,
+      16.84,
+      1185.045,
+      745.17
+    ],
+    "render_scale": 3,
+    "purpose": "집기 형상, 전체 치수와 상세 및 원본 참조사진 확인",
+    "component_codes": [
+      "COUNTER GUARD"
+    ]
+  },
+  {
+    "file": "p073_counter_backwall_drawing.png",
+    "pdf_page": 73,
+    "crop_pdf_points": [
+      47.64,
+      16.84,
+      1185.045,
+      745.17
+    ],
+    "render_scale": 3,
+    "purpose": "집기 형상, 전체 치수와 상세 및 원본 참조사진 확인",
+    "component_codes": [
+      "COUNTER BACK WALL"
+    ]
+  },
+  {
+    "file": "p074_service_table_drawing.png",
+    "pdf_page": 74,
+    "crop_pdf_points": [
+      47.64,
+      16.84,
+      1185.045,
+      745.17
+    ],
+    "render_scale": 3,
+    "purpose": "집기 형상, 전체 치수와 상세 및 원본 참조사진 확인",
+    "component_codes": [
+      "SERVICE TABLE"
+    ]
+  },
+  {
+    "file": "p075_chain_display_drawing.png",
+    "pdf_page": 75,
+    "crop_pdf_points": [
+      47.64,
+      16.84,
+      1185.045,
+      745.17
+    ],
+    "render_scale": 3,
+    "purpose": "집기 형상, 전체 치수와 상세 및 원본 참조사진 확인",
+    "component_codes": [
+      "CHAIN SCREEN DISPLAY",
+      "FX-01",
+      "FX-02"
+    ]
+  },
+  {
+    "file": "p076_fr_hg_drawing.png",
+    "pdf_page": 76,
+    "crop_pdf_points": [
+      47.64,
+      16.84,
+      1185.045,
+      745.17
+    ],
+    "render_scale": 3,
+    "purpose": "집기 형상, 전체 치수와 상세 및 원본 참조사진 확인",
+    "component_codes": [
+      "F/R HG"
+    ]
+  },
+  {
+    "file": "p077_fr_stool_drawing.png",
+    "pdf_page": 77,
+    "crop_pdf_points": [
+      47.64,
+      16.84,
+      1185.045,
+      745.17
+    ],
+    "render_scale": 3,
+    "purpose": "집기 형상, 전체 치수와 상세 및 원본 참조사진 확인",
+    "component_codes": [
+      "F/R STOOL"
+    ]
+  },
+  {
+    "file": "p078_fr_mirror_shelf_drawing.png",
+    "pdf_page": 78,
+    "crop_pdf_points": [
+      47.64,
+      16.84,
+      1185.045,
+      745.17
+    ],
+    "render_scale": 3,
+    "purpose": "집기 형상, 전체 치수와 상세 및 원본 참조사진 확인",
+    "component_codes": [
+      "F/R MIRROR,SHELF"
+    ]
+  },
+  {
+    "file": "p079_fr_mr_drawing.png",
+    "pdf_page": 79,
+    "crop_pdf_points": [
+      47.64,
+      16.84,
+      1185.045,
+      745.17
+    ],
+    "render_scale": 3,
+    "purpose": "집기 형상, 전체 치수와 상세 및 원본 참조사진 확인",
+    "component_codes": [
+      "F/R MR"
+    ]
+  },
+  {
+    "file": "p080_fr_panel_drawing.png",
+    "pdf_page": 80,
+    "crop_pdf_points": [
+      47.64,
+      16.84,
+      1185.045,
+      745.17
+    ],
+    "render_scale": 3,
+    "purpose": "집기 형상, 전체 치수와 상세 및 원본 참조사진 확인",
+    "component_codes": [
+      "F/R 타공판"
+    ]
+  },
+  {
+    "file": "p081_fr_door_drawing.png",
+    "pdf_page": 81,
+    "crop_pdf_points": [
+      47.64,
+      16.84,
+      1185.045,
+      745.17
+    ],
+    "render_scale": 3,
+    "purpose": "집기 형상, 전체 치수와 상세 및 원본 참조사진 확인",
+    "component_codes": [
+      "F/R DOOR"
+    ]
+  },
+  {
+    "file": "p082_stock_door_drawing.png",
+    "pdf_page": 82,
+    "crop_pdf_points": [
+      47.64,
+      16.84,
+      1185.045,
+      745.17
+    ],
+    "render_scale": 3,
+    "purpose": "집기 형상, 전체 치수와 상세 및 원본 참조사진 확인",
+    "component_codes": [
+      "창고 도어"
+    ]
+  },
+  {
+    "file": "p096_dp_t2_plan_drawing.png",
+    "pdf_page": 96,
+    "crop_pdf_points": [
+      47.64,
+      16.84,
+      1185.045,
+      745.17
+    ],
+    "render_scale": 3,
+    "purpose": "집기 형상, 전체 치수와 상세 및 원본 참조사진 확인",
+    "component_codes": [
+      "DP-T2"
+    ]
+  },
+  {
+    "file": "p097_dp_t2_detail_drawing.png",
+    "pdf_page": 97,
+    "crop_pdf_points": [
+      47.64,
+      16.84,
+      1185.045,
+      745.17
+    ],
+    "render_scale": 3,
+    "purpose": "집기 형상, 전체 치수와 상세 및 원본 참조사진 확인",
+    "component_codes": [
+      "DP-T2"
+    ]
+  },
+  {
+    "file": "p098_dp_t3_drawing.png",
+    "pdf_page": 98,
+    "crop_pdf_points": [
+      47.64,
+      16.84,
+      1185.045,
+      745.17
+    ],
+    "render_scale": 3,
+    "purpose": "집기 형상, 전체 치수와 상세 및 원본 참조사진 확인",
+    "component_codes": [
+      "DP-T3"
+    ]
+  },
+  {
+    "file": "p059_shelf_led_detail.png",
+    "pdf_page": 59,
+    "crop_pdf_points": [
+      47.64,
+      479.93999999999994,
+      666.96,
+      736.75
+    ],
+    "render_scale": 4,
+    "purpose": "접합·단면·설치 주석 고해상도 상세 확인",
+    "component_codes": [
+      "ML-M-01 HG(A)"
+    ]
+  },
+  {
+    "file": "p060_mirror_mesh_detail.png",
+    "pdf_page": 60,
+    "crop_pdf_points": [
+      518.085,
+      42.1,
+      1119.54,
+      218.92000000000002
+    ],
+    "render_scale": 4,
+    "purpose": "접합·단면·설치 주석 고해상도 상세 확인",
+    "component_codes": [
+      "ML-M-01 HG(B)"
+    ]
+  },
+  {
+    "file": "p063_bracket_detail.png",
+    "pdf_page": 63,
+    "crop_pdf_points": [
+      154.83,
+      362.06,
+      1119.54,
+      732.54
+    ],
+    "render_scale": 4,
+    "purpose": "접합·단면·설치 주석 고해상도 상세 확인",
+    "component_codes": [
+      "ML-W-04_SH"
+    ]
+  },
+  {
+    "file": "p064_suspension_led_detail.png",
+    "pdf_page": 64,
+    "crop_pdf_points": [
+      524.04,
+      16.84,
+      1185.045,
+      736.75
+    ],
+    "render_scale": 4,
+    "purpose": "접합·단면·설치 주석 고해상도 상세 확인",
+    "component_codes": [
+      "ML-M-01 HG(E)"
+    ]
+  },
+  {
+    "file": "p068_glass_section_detail.png",
+    "pdf_page": 68,
+    "crop_pdf_points": [
+      607.41,
+      58.940000000000005,
+      1131.45,
+      479.93999999999994
+    ],
+    "render_scale": 4,
+    "purpose": "접합·단면·설치 주석 고해상도 상세 확인",
+    "component_codes": [
+      "DP-T"
+    ]
+  },
+  {
+    "file": "p069_corner_led_detail.png",
+    "pdf_page": 69,
+    "crop_pdf_points": [
+      750.33,
+      101.03999999999999,
+      1131.45,
+      732.54
+    ],
+    "render_scale": 4,
+    "purpose": "접합·단면·설치 주석 고해상도 상세 확인",
+    "component_codes": [
+      "COUNTER"
+    ]
+  },
+  {
+    "file": "p073_acrylic_joint_detail.png",
+    "pdf_page": 73,
+    "crop_pdf_points": [
+      714.6,
+      25.259999999999998,
+      1137.405,
+      488.35999999999996
+    ],
+    "render_scale": 4,
+    "purpose": "접합·단면·설치 주석 고해상도 상세 확인",
+    "component_codes": [
+      "COUNTER BACK WALL"
+    ]
+  },
+  {
+    "file": "p075_pulley_detail.png",
+    "pdf_page": 75,
+    "crop_pdf_points": [
+      47.64,
+      16.84,
+      1119.54,
+      231.55
+    ],
+    "render_scale": 4,
+    "purpose": "접합·단면·설치 주석 고해상도 상세 확인",
+    "component_codes": [
+      "CHAIN SCREEN DISPLAY",
+      "FX-01",
+      "FX-02"
+    ]
+  },
+  {
+    "file": "p078_mirror_joint_detail.png",
+    "pdf_page": 78,
+    "crop_pdf_points": [
+      768.195,
+      29.470000000000002,
+      1149.315,
+      538.88
+    ],
+    "render_scale": 4,
+    "purpose": "접합·단면·설치 주석 고해상도 상세 확인",
+    "component_codes": [
+      "F/R MIRROR,SHELF"
+    ]
+  },
+  {
+    "file": "p079_mirror_led_detail.png",
+    "pdf_page": 79,
+    "crop_pdf_points": [
+      357.3,
+      151.56,
+      893.25,
+      479.93999999999994
+    ],
+    "render_scale": 4,
+    "purpose": "접합·단면·설치 주석 고해상도 상세 확인",
+    "component_codes": [
+      "F/R MR"
+    ]
+  },
+  {
+    "file": "p081_hinge_plan_detail.png",
+    "pdf_page": 81,
+    "crop_pdf_points": [
+      41.685,
+      33.68,
+      643.14,
+      425.21
+    ],
+    "render_scale": 4,
+    "purpose": "접합·단면·설치 주석 고해상도 상세 확인",
+    "component_codes": [
+      "F/R DOOR"
+    ]
+  },
+  {
+    "file": "p096_angled_plan_detail.png",
+    "pdf_page": 96,
+    "crop_pdf_points": [
+      53.595,
+      16.84,
+      1119.54,
+      442.05
+    ],
+    "render_scale": 4,
+    "purpose": "접합·단면·설치 주석 고해상도 상세 확인",
+    "component_codes": [
+      "DP-T2"
+    ]
+  },
+  {
+    "file": "p098_machine_power_detail.png",
+    "pdf_page": 98,
+    "crop_pdf_points": [
+      728.8919999999999,
+      25.259999999999998,
+      1185.045,
+      395.73999999999995
+    ],
+    "render_scale": 4,
+    "purpose": "접합·단면·설치 주석 고해상도 상세 확인",
+    "component_codes": [
+      "DP-T3"
+    ]
+  }
+]

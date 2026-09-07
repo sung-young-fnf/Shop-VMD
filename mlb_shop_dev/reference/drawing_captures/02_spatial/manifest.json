@@ -1,0 +1,281 @@
+[
+  {
+    "file": "p018_layout_dimensioned.png",
+    "pdf_page": 18,
+    "crop_pdf_points": [
+      55,
+      90,
+      795,
+      715
+    ],
+    "render_scale": 3,
+    "purpose": "1층 전체 공간 배치와 치수",
+    "component_codes": []
+  },
+  {
+    "file": "p018_area_table.png",
+    "pdf_page": 18,
+    "crop_pdf_points": [
+      945,
+      25,
+      1150,
+      116
+    ],
+    "render_scale": 3,
+    "purpose": "면적 산정표",
+    "component_codes": []
+  },
+  {
+    "file": "p018_core_counter.png",
+    "pdf_page": 18,
+    "crop_pdf_points": [
+      215,
+      140,
+      780,
+      330
+    ],
+    "render_scale": 3,
+    "purpose": "계단 화장실 카운터 리프트와 모자 벽",
+    "component_codes": [
+      "ML-W-02_CA",
+      "COUNTER"
+    ]
+  },
+  {
+    "file": "p018_central_track.png",
+    "pdf_page": 18,
+    "crop_pdf_points": [
+      285,
+      310,
+      715,
+      510
+    ],
+    "render_scale": 3,
+    "purpose": "중앙 트랙 집기와 동선",
+    "component_codes": [
+      "ML-M-01_HG"
+    ]
+  },
+  {
+    "file": "p018_lower_wall_fitting.png",
+    "pdf_page": 18,
+    "crop_pdf_points": [
+      215,
+      490,
+      780,
+      665
+    ],
+    "render_scale": 3,
+    "purpose": "하단 의류 벽과 피팅룸 배치",
+    "component_codes": [
+      "ML-W-01",
+      "ML-W-04",
+      "F/R"
+    ]
+  },
+  {
+    "file": "p019_floor_paint.png",
+    "pdf_page": 19,
+    "crop_pdf_points": [
+      215,
+      170,
+      785,
+      660
+    ],
+    "render_scale": 3,
+    "purpose": "PT-04 도장 범위와 치수",
+    "component_codes": [
+      "PT-04"
+    ]
+  },
+  {
+    "file": "p019_paint_quantity.png",
+    "pdf_page": 19,
+    "crop_pdf_points": [
+      910,
+      25,
+      1150,
+      68
+    ],
+    "render_scale": 3,
+    "purpose": "도장 물량과 로스 면적",
+    "component_codes": [
+      "PT-04"
+    ]
+  },
+  {
+    "file": "p020_demolition.png",
+    "pdf_page": 20,
+    "crop_pdf_points": [
+      200,
+      165,
+      795,
+      650
+    ],
+    "render_scale": 3,
+    "purpose": "철거 벽체와 기존 문 구분",
+    "component_codes": []
+  },
+  {
+    "file": "p021_column_legend.png",
+    "pdf_page": 21,
+    "crop_pdf_points": [
+      845,
+      45,
+      1140,
+      480
+    ],
+    "render_scale": 3,
+    "purpose": "기둥 존치와 도장 지침",
+    "component_codes": [
+      "PT-05"
+    ]
+  },
+  {
+    "file": "p022_wall_finish.png",
+    "pdf_page": 22,
+    "crop_pdf_points": [
+      210,
+      170,
+      785,
+      650
+    ],
+    "render_scale": 3,
+    "purpose": "벽체 존치와 지정 도장 범위",
+    "component_codes": [
+      "PT-01",
+      "MT-02"
+    ]
+  },
+  {
+    "file": "p029_wall_a_elevation.png",
+    "pdf_page": 29,
+    "crop_pdf_points": [
+      50,
+      380,
+      1145,
+      670
+    ],
+    "render_scale": 3,
+    "purpose": "A 모자 벽과 카운터 입면",
+    "component_codes": [
+      "ML-W-02_CA",
+      "ML-W-02_MR",
+      "COUNTER"
+    ]
+  },
+  {
+    "file": "p030_counter_lift_elevation.png",
+    "pdf_page": 30,
+    "crop_pdf_points": [
+      45,
+      350,
+      1075,
+      735
+    ],
+    "render_scale": 3,
+    "purpose": "A 프라임 카운터 후면과 리프트",
+    "component_codes": [
+      "COUNTER BACK WALL",
+      "FX-04"
+    ]
+  },
+  {
+    "file": "p031_stock_door.png",
+    "pdf_page": 31,
+    "crop_pdf_points": [
+      450,
+      340,
+      810,
+      735
+    ],
+    "render_scale": 3,
+    "purpose": "B 프라임 창고문",
+    "component_codes": [
+      "ML-02"
+    ]
+  },
+  {
+    "file": "p032_wall_b_elevation.png",
+    "pdf_page": 32,
+    "crop_pdf_points": [
+      140,
+      385,
+      1050,
+      700
+    ],
+    "render_scale": 3,
+    "purpose": "B 신발벽과 피팅 출입문",
+    "component_codes": [
+      "ML-W-02_SH",
+      "F/R DOOR"
+    ]
+  },
+  {
+    "file": "p033_wall_c_elevation.png",
+    "pdf_page": 33,
+    "crop_pdf_points": [
+      45,
+      395,
+      1150,
+      680
+    ],
+    "render_scale": 3,
+    "purpose": "C 의류 집기와 피팅 외부 거울",
+    "component_codes": [
+      "ML-W-01",
+      "ML-W-04"
+    ]
+  },
+  {
+    "file": "p034_wall_d_elevation.png",
+    "pdf_page": 34,
+    "crop_pdf_points": [
+      60,
+      375,
+      1140,
+      745
+    ],
+    "render_scale": 3,
+    "purpose": "D 출입구 내측 창틀 및 체인 스크린",
+    "component_codes": [
+      "MT-05",
+      "MT-02",
+      "PT-03"
+    ]
+  },
+  {
+    "file": "p035_fitting_room_1.png",
+    "pdf_page": 35,
+    "crop_pdf_points": [
+      65,
+      295,
+      1190,
+      705
+    ],
+    "render_scale": 3,
+    "purpose": "상단 피팅룸 4면 입면",
+    "component_codes": [
+      "F/R MIRROR",
+      "F/R HG",
+      "F/R DOOR"
+    ]
+  },
+  {
+    "file": "p036_fitting_room_2.png",
+    "pdf_page": 36,
+    "crop_pdf_points": [
+      65,
+      355,
+      1145,
+      705
+    ],
+    "render_scale": 3,
+    "purpose": "하단 피팅룸 4면 입면",
+    "component_codes": [
+      "F/R MIRROR",
+      "F/R HG",
+      "F/R DOOR"
+    ]
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "schema": 1,
+  "name": "house",
+  "version": "0.1.0",
+  "description": "Floor-plan and exterior-reference reconstruction with blocking architectural and browser evidence gates.",
+  "capabilities": [{"from": "floor-plan-images", "to": "procedural-threejs-house"}],
+  "requires": {"harness": ">=0.2.3", "coreApi": 1}
+}

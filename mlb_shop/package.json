@@ -1,0 +1,24 @@
+{
+	"name": "mlb-seongsu-spatial-archive",
+	"version": "0.1.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "vite --host 0.0.0.0 --port 5174 --strictPort",
+		"build": "tsc --noEmit && vite build",
+		"check": "tsc --noEmit",
+		"preview": "vite preview --host 0.0.0.0 --port 4174 --strictPort"
+	},
+	"dependencies": {
+		"three": "^0.185.1"
+	},
+	"devDependencies": {
+		"@axe-core/playwright": "^4.13.0",
+		"@biomejs/biome": "^2.5.12",
+		"@types/three": "^0.185.4",
+		"lighthouse": "^13.4.1",
+		"playwright": "^1.63.0",
+		"typescript": "^7.0.2",
+		"vite": "^8.2.2"
+	}
+}

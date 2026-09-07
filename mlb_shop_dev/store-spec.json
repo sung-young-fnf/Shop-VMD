@@ -1,0 +1,846 @@
+{
+  "schemaVersion": 1,
+  "id": "mlb-seongsu",
+  "title": "MLB 성수",
+  "scope": "Approximate procedural architectural reconstruction from the supplied 106-page drawing set; not measured as-built or construction certification.",
+  "source": {
+    "pdfSha256": "4add8476b1229027cdcd1c382029e964034d8fd534e375d9d416a12294a239a9",
+    "pageCount": 106,
+    "analysis": "analysis/MLB_성수점_매장구성_및_Threejs_구현명세.md",
+    "captureManifest": "reference/drawing_captures/pages_manifest.json",
+    "sourceManifest": "evidence/harness/source-manifest.json"
+  },
+  "coordinates": {
+    "units": "meters",
+    "sourceUnits": "millimeters",
+    "mmToMeters": 0.001,
+    "origin": "p018 top-left main exterior dimension rectangle",
+    "x": "p018 right",
+    "z": "p018 down",
+    "y": "up",
+    "geographicOrientation": "unknown",
+    "boundsMeters": {
+      "min": [
+        0,
+        0,
+        0
+      ],
+      "max": [
+        19.19,
+        9.7,
+        15.935
+      ]
+    },
+    "calibration": {
+      "reference": "reference/drawing_captures/pages/page-018.png",
+      "nativePixels": [
+        1787,
+        1263
+      ],
+      "dimensionEndpointsPixels": {
+        "x": [
+          333,
+          1149
+        ],
+        "z": [
+          266,
+          943
+        ]
+      },
+      "formula": "x=(u-333)*19.190/816; z=(v-266)*15.935/677",
+      "status": "provisional visual coordinate read; dimensions explicit, pixel endpoints approximate",
+      "coordinateToleranceMeters": 0.15
+    }
+  },
+  "areasM2": {
+    "store": 261.23,
+    "fitting": 6.48,
+    "core": 23.63,
+    "total": 291.34,
+    "note": "Do not equate bounding rectangle area or two room clear areas to area schedule."
+  },
+  "levels": [
+    {
+      "id": "floor1",
+      "y": 0,
+      "yDatum": "finished-floor",
+      "slabUnderside": 3.1,
+      "beamUnderside": 2.7,
+      "sourcePages": [
+        18,
+        23
+      ]
+    },
+    {
+      "id": "floor2",
+      "y": 3.2,
+      "yDatum": "slab-underside",
+      "slabTop": 3.4,
+      "slabThickness": 0.2,
+      "dimensionStatus": "Inferred model slab; underside3.2 plus assumed thickness0.2 yields walking surface3.4. No construction section confirms thickness.",
+      "confidence": "inferred exterior floor band",
+      "use": "storage and back of house",
+      "sourcePages": [
+        8,
+        103,
+        105,
+        106
+      ]
+    },
+    {
+      "id": "floor3",
+      "y": 6.5,
+      "yDatum": "slab-underside",
+      "slabTop": 6.7,
+      "slabThickness": 0.2,
+      "dimensionStatus": "Inferred model slab; underside6.5 plus assumed thickness0.2 yields walking surface6.7. No construction section confirms thickness.",
+      "confidence": "inferred exterior floor band",
+      "use": "known partitions/core/VOID only",
+      "sourcePages": [
+        8,
+        104
+      ]
+    }
+  ],
+  "zones": [
+    {
+      "id": "entrance",
+      "label": "입구",
+      "focus": [
+        0.6,
+        1.2,
+        8.7
+      ],
+      "sourcePages": [
+        17,
+        18,
+        34
+      ],
+      "required": [
+        "double glass door",
+        "blue frame",
+        "baseball-stitch handles",
+        "chain display"
+      ]
+    },
+    {
+      "id": "central",
+      "label": "중앙 진열",
+      "focus": [
+        9,
+        1.2,
+        8.2
+      ],
+      "sourcePages": [
+        18,
+        19,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65
+      ],
+      "required": [
+        "four curved HG-A/B/C/D islands",
+        "separate suspended HG-E/F",
+        "track floor"
+      ]
+    },
+    {
+      "id": "headwear",
+      "label": "모자",
+      "focus": [
+        7.4,
+        1.3,
+        2.5
+      ],
+      "sourcePages": [
+        18,
+        29,
+        45,
+        46,
+        51,
+        52
+      ],
+      "required": [
+        "8 CA assemblies with integrated cabinets",
+        "mirror/acrylic variants"
+      ]
+    },
+    {
+      "id": "footwear",
+      "label": "신발",
+      "focus": [
+        18.4,
+        1.3,
+        7.6
+      ],
+      "sourcePages": [
+        18,
+        32,
+        44,
+        47,
+        48,
+        49,
+        50,
+        53,
+        54
+      ],
+      "required": [
+        "5 SH assemblies with integrated cabinets",
+        "curved terminal displays"
+      ]
+    },
+    {
+      "id": "apparel",
+      "label": "의류",
+      "focus": [
+        10.8,
+        1.3,
+        14.6
+      ],
+      "sourcePages": [
+        18,
+        33,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        55,
+        56,
+        57,
+        58,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95
+      ],
+      "required": [
+        "3 angled W04",
+        "1 perforated W04",
+        "1 W2000 W04",
+        "W01 apparel bay"
+      ]
+    },
+    {
+      "id": "checkout",
+      "label": "카운터",
+      "focus": [
+        13.4,
+        1,
+        2.3
+      ],
+      "sourcePages": [
+        18,
+        29,
+        30,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74
+      ],
+      "required": [
+        "counter",
+        "backwall",
+        "service table",
+        "guard"
+      ]
+    },
+    {
+      "id": "custom",
+      "label": "모꾸존",
+      "focus": [
+        2,
+        1,
+        13.4
+      ],
+      "sourcePages": [
+        18,
+        24,
+        96,
+        97,
+        98
+      ],
+      "required": [
+        "angled DP-T2",
+        "2 DP-T3 stations",
+        "2 illustrative heat presses"
+      ]
+    },
+    {
+      "id": "fitting",
+      "label": "피팅룸",
+      "focus": [
+        18,
+        1.2,
+        14
+      ],
+      "sourcePages": [
+        18,
+        35,
+        36,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81
+      ],
+      "required": [
+        "2 rooms",
+        "opposed hinges",
+        "2 internal mirror/shelf assemblies",
+        "2 stools",
+        "external mirror"
+      ]
+    },
+    {
+      "id": "upper-storage",
+      "label": "상층 창고",
+      "focus": [
+        9,
+        4.2,
+        8
+      ],
+      "sourcePages": [
+        103,
+        104,
+        105,
+        106
+      ],
+      "required": [
+        "2F rack system",
+        "staff lockers",
+        "3F known partitions and VOID"
+      ],
+      "confidence": "partial source coverage"
+    }
+  ],
+  "fixtures": [
+    {
+      "id": "hg-a",
+      "zoneId": "central",
+      "count": 1,
+      "sizeMm": [
+        4000,
+        2480,
+        1520
+      ],
+      "sourcePages": [
+        59
+      ],
+      "placement": "upper-left track",
+      "topology": "curved extruded/perforated assembly"
+    },
+    {
+      "id": "hg-b",
+      "zoneId": "central",
+      "count": 1,
+      "sizeMm": [
+        4000,
+        2480,
+        1520
+      ],
+      "sourcePages": [
+        60
+      ],
+      "placement": "lower-left track",
+      "topology": "curved assembly with mirror variant"
+    },
+    {
+      "id": "hg-c",
+      "zoneId": "central",
+      "count": 1,
+      "sizeMm": [
+        5240,
+        2480,
+        1520
+      ],
+      "sourcePages": [
+        61
+      ],
+      "placement": "upper-right track",
+      "topology": "curved extruded/perforated assembly"
+    },
+    {
+      "id": "hg-d",
+      "zoneId": "central",
+      "count": 1,
+      "sizeMm": [
+        5240,
+        2480,
+        1520
+      ],
+      "sourcePages": [
+        62
+      ],
+      "placement": "lower-right track",
+      "topology": "curved assembly with mirror variant"
+    },
+    {
+      "id": "hg-e",
+      "zoneId": "central",
+      "count": 1,
+      "bottomMm": 745,
+      "sourcePages": [
+        64
+      ],
+      "placement": "inner left"
+    },
+    {
+      "id": "hg-f",
+      "zoneId": "central",
+      "count": 1,
+      "bottomMm": 1700,
+      "sourcePages": [
+        65
+      ],
+      "placement": "inner right"
+    },
+    {
+      "id": "ca-cabinet",
+      "zoneId": "headwear",
+      "count": 8,
+      "nominalWidthMm": 950,
+      "sourcePages": [
+        18,
+        29,
+        45,
+        46,
+        51,
+        52
+      ],
+      "placement": "top wall; 2+4+2 repeat pattern"
+    },
+    {
+      "id": "sh-cabinet",
+      "zoneId": "footwear",
+      "count": 5,
+      "sourcePages": [
+        18,
+        32,
+        44,
+        47,
+        48,
+        49,
+        50,
+        53,
+        54
+      ],
+      "placement": "right wall"
+    },
+    {
+      "id": "w04-standard",
+      "zoneId": "apparel",
+      "count": 3,
+      "nominalWidthMm": 1360,
+      "rotationDegrees": 10,
+      "sourcePages": [
+        18,
+        33,
+        55
+      ],
+      "placement": "lower-left wall; approximate angle"
+    },
+    {
+      "id": "w04-perforated",
+      "zoneId": "apparel",
+      "runtimeFixtureIds": ["w04-grating-01"],
+      "runtimeProductCode": "ML-W-04(타공판)",
+      "runtimeRequiredSourcePages": [83,84,85,86,87],
+      "count": 1,
+      "sourcePages": [
+        83,
+        84,
+        85,
+        86,
+        87,
+        92,
+        93,
+        94
+      ],
+      "placement": "lower wall"
+    },
+    {
+      "id": "w04-wide",
+      "familyZone": "apparel",
+      "zoneId": "custom",
+      "runtimeFixtureIds": ["w04-perforated-01"],
+      "runtimeProductCode": "ML-W-04(2000)",
+      "runtimeRequiredSourcePages": [88,89,90,91,95],
+      "zoneRationale": "W04 is a wall/apparel fixture family; this wide physical instance backs the customization stations. Historical runtime ID is an alias, not the family name.",
+      "count": 1,
+      "nominalWidthMm": 2000,
+      "sourcePages": [
+        88,
+        89,
+        90,
+        91,
+        95
+      ],
+      "placement": "lower-left wall"
+    },
+    {
+      "id": "counter",
+      "zoneId": "checkout",
+      "count": 1,
+      "sizeMm": [
+        3300,
+        1100,
+        800
+      ],
+      "positionMeters": [
+        13.45,
+        0,
+        2.4
+      ],
+      "sourcePages": [
+        18,
+        29,
+        69
+      ],
+      "dimensionStatus": "provisional detailed model; competing p018 W2600 D500 preserved"
+    },
+    {
+      "id": "dp-t2",
+      "zoneId": "custom",
+      "count": 1,
+      "sizeMm": [
+        1549,
+        920,
+        2120
+      ],
+      "sourcePages": [
+        18,
+        96,
+        97
+      ],
+      "dimensionStatus": "Multi-view bounding approximation: p018 footprint1549x2120, p096 height920 (p018900). Actual120-degree angled tabletop, not a rectangular cuboid."
+    },
+    {
+      "id": "dp-t3",
+      "zoneId": "custom",
+      "count": 2,
+      "sizeMm": [
+        1000,
+        800,
+        800
+      ],
+      "sourcePages": [
+        18,
+        98
+      ],
+      "dimensionStatus": "provisional; p098 top width890"
+    },
+    {
+      "id": "fitting-room",
+      "zoneId": "fitting",
+      "count": 2,
+      "clearSizeMm": [
+        1800,
+        2520,
+        1665
+      ],
+      "sourcePages": [
+        18,
+        35,
+        36
+      ],
+      "placement": "right-bottom, vertically adjoining in plan"
+    },
+    {
+      "id": "fitting-stool",
+      "zoneId": "fitting",
+      "count": 2,
+      "sourcePages": [
+        35,
+        36,
+        77
+      ],
+      "placement": "one per room"
+    },
+    {
+      "id": "storage-rack-system",
+      "zoneId": "upper-storage",
+      "sourcePages": [
+        105,
+        106
+      ],
+      "schedule": {
+        "assemblies": 106,
+        "shelves": 424,
+        "posts": 272
+      },
+      "nominalBayMm": [
+        1200,
+        1800,
+        450
+      ],
+      "countInterpretation": "Shared posts; do not model 424 independent posts or claim all schedule quantities represented unless counted."
+    },
+    {
+      "id": "staff-locker",
+      "zoneId": "upper-storage",
+      "count": 2,
+      "sizeMm": [
+        900,
+        1790,
+        510
+      ],
+      "sourcePages": [
+        105,
+        106
+      ]
+    }
+  ],
+  "materials": {
+    "policy": "Colors and PBR scalars are approximations; drawing highlight hatches are not material colors.",
+    "semanticKeys": [
+      "mt01-gray-powder",
+      "mt02-gray-metal",
+      "mt03-perforated",
+      "p003-blue-metal-duplicate-mt06",
+      "p003-expanded-mesh-duplicate-mt06",
+      "mt07-brushed-steel",
+      "mt08-brown-profile",
+      "mt09-blue-aluminum",
+      "ac01-blue-acrylic",
+      "ac02-gray-acrylic",
+      "wd01-birdseye-wood",
+      "pt01-gray-paint",
+      "pt02-concrete-finish",
+      "pt04-granular-floor",
+      "fb01-fabric",
+      "me01-facade-belt-mesh",
+      "glass",
+      "mirror"
+    ],
+    "sourcePages": [
+      3,
+      4,
+      5
+    ]
+  },
+  "lighting": {
+    "railKelvin": 4000,
+    "barrisolKelvin": 5000,
+    "exteriorLogoKelvin": 3000,
+    "exteriorLineKelvin": 4000,
+    "exteriorStatus": "provisional conflicts across p006/008/009/010/017/101",
+    "sourcePages": [
+      6,
+      23,
+      25,
+      26,
+      27,
+      28
+    ],
+    "counts": {
+      "l01": 56,
+      "l02": 19,
+      "hvac": 4,
+      "cctv": 8,
+      "speakers": 6
+    },
+    "countStatus": "drawing schedule or visual symbol count; runtime coverage must be measured"
+  },
+  "conflicts": [
+    {
+      "id": "COUNTER",
+      "pages": [
+        18,
+        29,
+        69
+      ],
+      "resolution": "3300x800x1100 mm provisional versus p018 2600x500x1100."
+    },
+    {
+      "id": "MT06",
+      "pages": [
+        3
+      ],
+      "resolution": "Blue metal and expanded mesh retain distinct semantic keys."
+    },
+    {
+      "id": "FACADE",
+      "pages": [
+        8,
+        9,
+        11,
+        12
+      ],
+      "resolution": "17035 outer projection,15935 main,15910 louver and6000x5500 effective banner are distinct datum dimensions."
+    },
+    {
+      "id": "BARRISOL",
+      "pages": [
+        23,
+        25
+      ],
+      "resolution": "Beam2700 and central barrisol underside2750 conflict with below-beam note; do not certify interference-free construction."
+    },
+    {
+      "id": "FITTING-AREA",
+      "pages": [
+        18,
+        35,
+        36
+      ],
+      "resolution": "6.48 schedule vs5.994 clear; preserve both."
+    },
+    {
+      "id": "FITTING-DOOR",
+      "pages": [
+        35,
+        36,
+        81
+      ],
+      "resolution": "Door2300 plus upper220 within total2520; separate leaves and transoms."
+    },
+    {
+      "id": "DP-T3",
+      "pages": [
+        98
+      ],
+      "resolution": "1000 width provisional versus890 top."
+    },
+    {
+      "id": "MIRROR-WIDTH",
+      "pages": [
+        18,
+        32
+      ],
+      "resolution": "442.5/470 differ; placement approximation disclosed."
+    },
+    {
+      "id": "LIGHT-CCT",
+      "pages": [
+        6,
+        8,
+        9,
+        10,
+        17,
+        39,
+        101
+      ],
+      "resolution": "Exterior3000/4000 selected provisionally; not latest-sheet approval."
+    },
+    {
+      "id": "BEAM-FINISH",
+      "pages": [
+        23
+      ],
+      "resolution": "PT02/PT05 scope uncertain."
+    },
+    {
+      "id": "ENTRY-HEIGHT",
+      "pages": [
+        17,
+        34
+      ],
+      "resolution": "2625/2635 inner height,2685 frame; do not merge datum."
+    },
+    {
+      "id": "DP-T2",
+      "pages": [
+        18,
+        96
+      ],
+      "resolution": "920 height provisional versus900."
+    }
+  ],
+  "qualityContract": {
+    "route": "source-backed-store-architecture",
+    "genericObjectPipeline": "not admitted: multi-view architectural scene, not isolated object; no generic completion claim",
+    "minimumMacroZones": 9,
+    "requiredCounts": [
+      "CA=8",
+      "SH=5",
+      "HG-A/B/C/D=4 distinct curved assemblies",
+      "HG-E/F=2 distinct suspended assemblies",
+      "fitting rooms=2",
+      "DP-T3=2",
+      "heat press proxy=2",
+      "W04=3+1+1"
+    ],
+    "minimumDetailGroups": 18,
+    "detailGroups": [
+      "door frames",
+      "baseball seam handles",
+      "facade louvers",
+      "facade belt mesh",
+      "sign letters",
+      "banner frame",
+      "curved perforated skins",
+      "expanded mesh openings",
+      "shelf lips",
+      "cabinet bases",
+      "mirror/acrylic variants",
+      "hanger rods",
+      "wood grain direction",
+      "counter curved end",
+      "counter glass and wood band",
+      "fitting hinges and locks",
+      "stool fabric and handle",
+      "chain and pulley"
+    ],
+    "requiredCaptures": [
+      "plan",
+      "entrance exterior",
+      "rear or corresponding interior",
+      "left/right interior",
+      "diorama",
+      "all 9 zone selections",
+      "night",
+      "mobile375",
+      "tablet768",
+      "desktop1280",
+      "reference modal",
+      "WebGL fallback"
+    ],
+    "stages": [
+      "specification",
+      "blockout source comparison",
+      "structure/details",
+      "material/lighting",
+      "interaction",
+      "current-build verification"
+    ],
+    "blockingFailures": [
+      "Wrong entrance axis",
+      "Four central forms replaced by boxes/closed oval wall",
+      "Wrong CA/SH assembly count",
+      "Opaque wall behind glass opening",
+      "Missing fitting room or incorrect zone ID",
+      "Upper floors labeled retail without evidence",
+      "Floating merchandise",
+      "Selected target hidden",
+      "Stale screenshots",
+      "Runtime error or nonfinite bounds",
+      "False official harness pass"
+    ],
+    "runtimeBudget": {
+      "targetDrawCalls": 600,
+      "targetTriangles": 600000,
+      "status": "project target; measure visible worst view, report exceptions"
+    },
+    "verification": "Source-backed count/bounds checks plus current real browser screenshots and interactions; no pixel IoU claim between line drawing and shaded perspective."
+  },
+  "placementContract": "evidence/harness/placement-contract.json"
+}

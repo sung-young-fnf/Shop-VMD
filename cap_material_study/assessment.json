@@ -1,0 +1,614 @@
+{
+  "targetName": "Navy twill embroidered NY cap",
+  "sourceImage": "C:/Users/AC1143/Project/Project/shop_vmd/cap_material_study/public/reference/cap-rgba.png",
+  "preSpecAssessment": {
+    "objectClass": {
+      "primaryType": "structured six-panel baseball cap",
+      "primaryDomain": "object",
+      "formLanguage": [
+        "fabric-like",
+        "smooth domed shell",
+        "curved visor"
+      ],
+      "structureKind": [
+        "layered shell",
+        "sewn gores",
+        "raised embroidered relief"
+      ],
+      "motionPotential": [
+        "static prop",
+        "whole-object transform",
+        "detachable inspection parts"
+      ],
+      "materialFamilies": [
+        "navy woven cloth",
+        "ivory embroidery yarn",
+        "navy seam thread"
+      ],
+      "notes": "Cotton twill is a visual interpretation. Rear fastening and interior are not visible."
+    },
+    "complexity": {
+      "tier": "complex",
+      "scores": {
+        "silhouetteComplexity": 2,
+        "componentCount": 2,
+        "hierarchyDepth": 2,
+        "repetitionDensity": 3,
+        "materialLayerCount": 2,
+        "localDetailDensity": 3,
+        "occlusionRisk": 2,
+        "actionReadinessNeed": 1
+      },
+      "estimatedCounts": {
+        "macroComponents": 4,
+        "mesoComponents": 8,
+        "microFeatureGroups": 5,
+        "materialLayers": 3,
+        "repetitionSystems": 3
+      },
+      "reasoning": [
+        "Simple outline conceals six gores, curved visor shell, conforming raised lettering, directional weave and hundreds of repeated stitches."
+      ]
+    },
+    "specDepthDecision": {
+      "requiredDepth": "complex",
+      "minimumComponentLevels": [
+        "macro",
+        "meso",
+        "micro"
+      ],
+      "needsRepetitionSystems": true,
+      "needsMaterialLocalOverrides": true,
+      "needsMultipleReviewViews": true,
+      "needsActionReadyHierarchy": true,
+      "rationale": "Material-first fidelity requires panel-scale weave orientation, real raised embroidery and repeated stitched geometry."
+    },
+    "unknownsToResolveBeforeImplementation": [],
+    "detailInventory": {
+      "scanMethod": "component-zones",
+      "targetMinDetails": 10,
+      "note": "Mapped direct visible observations; interior-band marked inferred.",
+      "details": [
+        {
+          "id": "structured-dome",
+          "kind": "contour",
+          "description": "Near-vertical lower crown and rounded apex",
+          "region": {
+            "x": 0,
+            "y": 0,
+            "width": 1,
+            "height": 1,
+            "units": "normalized"
+          },
+          "affects": [
+            "form",
+            "material"
+          ],
+          "scale": 1.43,
+          "evidenceRef": "full-object",
+          "confidence": 0.85,
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "crown/structured-dome"
+          }
+        },
+        {
+          "id": "visor-upturn",
+          "kind": "contour",
+          "description": "Center dip and side upturn",
+          "region": {
+            "x": 0,
+            "y": 0,
+            "width": 1,
+            "height": 1,
+            "units": "normalized"
+          },
+          "affects": [
+            "form",
+            "material"
+          ],
+          "scale": 0.19,
+          "evidenceRef": "full-object",
+          "confidence": 0.85,
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "brim/visor-upturn"
+          }
+        },
+        {
+          "id": "visor-bound-edge",
+          "kind": "bevel",
+          "description": "Thin rounded fabric bound visor perimeter",
+          "region": {
+            "x": 0,
+            "y": 0,
+            "width": 1,
+            "height": 1,
+            "units": "normalized"
+          },
+          "affects": [
+            "form",
+            "material"
+          ],
+          "scale": 0.028,
+          "evidenceRef": "full-object",
+          "confidence": 0.85,
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "brim/visor-bound-edge"
+          }
+        },
+        {
+          "id": "ny-outline",
+          "kind": "ridge",
+          "description": "Raised interlocking NY outline with serif tips",
+          "region": {
+            "x": 0,
+            "y": 0,
+            "width": 1,
+            "height": 1,
+            "units": "normalized"
+          },
+          "affects": [
+            "form",
+            "material"
+          ],
+          "scale": 0.025,
+          "evidenceRef": "full-object",
+          "confidence": 0.85,
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "embroidery/ny-outline"
+          }
+        },
+        {
+          "id": "ny-negative-spaces",
+          "kind": "contour",
+          "description": "Keep open spaces between interlocking strokes",
+          "region": {
+            "x": 0,
+            "y": 0,
+            "width": 1,
+            "height": 1,
+            "units": "normalized"
+          },
+          "affects": [
+            "form",
+            "material"
+          ],
+          "scale": 0.05,
+          "evidenceRef": "full-object",
+          "confidence": 0.85,
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "embroidery/ny-negative-spaces"
+          }
+        },
+        {
+          "id": "covered-button",
+          "kind": "ridge",
+          "description": "Flattened fabric-covered apex button",
+          "region": {
+            "x": 0,
+            "y": 0,
+            "width": 1,
+            "height": 1,
+            "units": "normalized"
+          },
+          "affects": [
+            "form",
+            "material"
+          ],
+          "scale": 0.065,
+          "evidenceRef": "full-object",
+          "confidence": 0.85,
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "top-button/covered-button"
+          }
+        },
+        {
+          "id": "meridian-seam",
+          "kind": "seam",
+          "description": "Six panel seam curves with dark narrow contact shading",
+          "region": {
+            "x": 0,
+            "y": 0,
+            "width": 1,
+            "height": 1,
+            "units": "normalized"
+          },
+          "affects": [
+            "form",
+            "material"
+          ],
+          "scale": 0.007,
+          "evidenceRef": "full-object",
+          "confidence": 0.85,
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "panel-seams/meridian-seam"
+          }
+        },
+        {
+          "id": "stitched-eyelets",
+          "kind": "stitch",
+          "description": "Small sewn rings at upper side gores",
+          "region": {
+            "x": 0,
+            "y": 0,
+            "width": 1,
+            "height": 1,
+            "units": "normalized"
+          },
+          "affects": [
+            "form",
+            "material"
+          ],
+          "scale": 0.04,
+          "evidenceRef": "full-object",
+          "confidence": 0.85,
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "eyelets/stitched-eyelets"
+          }
+        },
+        {
+          "id": "six-stitch-rows",
+          "kind": "stitch",
+          "description": "Six nested curved rows across visor",
+          "region": {
+            "x": 0,
+            "y": 0,
+            "width": 1,
+            "height": 1,
+            "units": "normalized"
+          },
+          "affects": [
+            "form",
+            "material"
+          ],
+          "scale": 0.006,
+          "evidenceRef": "full-object",
+          "confidence": 0.85,
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "visor-stitches/six-stitch-rows"
+          }
+        },
+        {
+          "id": "diagonal-twill",
+          "kind": "ridge",
+          "description": "Fine diagonally running twill ridges",
+          "region": {
+            "x": 0,
+            "y": 0,
+            "width": 1,
+            "height": 1,
+            "units": "normalized"
+          },
+          "affects": [
+            "form",
+            "material"
+          ],
+          "scale": 0.0015,
+          "evidenceRef": "full-object",
+          "confidence": 0.85,
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "twill-ribs/diagonal-twill"
+          }
+        },
+        {
+          "id": "ivory-satin",
+          "kind": "stitch",
+          "description": "Parallel ivory thread relief across stroke width",
+          "region": {
+            "x": 0,
+            "y": 0,
+            "width": 1,
+            "height": 1,
+            "units": "normalized"
+          },
+          "affects": [
+            "form",
+            "material"
+          ],
+          "scale": 0.004,
+          "evidenceRef": "full-object",
+          "confidence": 0.85,
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "satin-stitches/ivory-satin"
+          }
+        },
+        {
+          "id": "interior-band",
+          "kind": "seam",
+          "description": "Inferred simple internal lower band",
+          "region": {
+            "x": 0,
+            "y": 0,
+            "width": 1,
+            "height": 1,
+            "units": "normalized"
+          },
+          "affects": [
+            "form",
+            "material"
+          ],
+          "scale": 0.12,
+          "evidenceRef": "full-object",
+          "confidence": 0.35,
+          "mapsTo": {
+            "type": "component.localFeatures",
+            "ref": "sweatband/interior-band"
+          }
+        }
+      ]
+    },
+    "anatomy": {
+      "applies": false,
+      "styleHeads": 0,
+      "proportions": {
+        "headUnit": 0,
+        "torso": 0,
+        "legs": 0,
+        "shoulderWidth": 0,
+        "hipWidth": 0
+      },
+      "pose": {
+        "type": "unassessed",
+        "jointAngles": {}
+      },
+      "faceLandmarks": {
+        "eyeLine": 0,
+        "eyeSpacing": 0,
+        "noseBase": 0,
+        "mouthLine": 0,
+        "hairline": 0
+      },
+      "features": [],
+      "confidence": 0,
+      "note": "Only meaningful when objectClass.primaryDomain is character or hybrid. Set applies=true and fill from forge/stage1_intake/extract_landmarks.py. See grimoire/character/reconstruction.md and grimoire/character/likeness_maximization.md."
+    },
+    "sourceImage": "C:/Users/AC1143/Project/Project/shop_vmd/cap_material_study/public/reference/cap-rgba.png",
+    "documentedLimitations": [
+      "Rear closure and sweatband are unobserved; use a simple inferred continuation, expose uncertainty in UI.",
+      "Camera and true physical fibre composition are estimates from one view."
+    ],
+    "limitationResolution": "Single-view unknowns remain explicitly documented in risks and per-part confidence; implement only a simple inferred interior and rear continuation."
+  },
+  "qualityContract": {
+    "qualityBar": "complex",
+    "definitionOfDone": [
+      "Structured navy crown has near-vertical lower walls, 2.00 width, 2.16 depth and 1.43 height above its lower seam.",
+      "Curved visor reaches z=2.05 with center y=-0.215 and gently lifted sides; crown remains open underneath.",
+      "Ivory interlocking NY is raised, 0.66 by 0.67, centered y=0.78 on the front shell and follows its curvature.",
+      "Twill diagonal ridges, dark seam stitching and ivory satin stitch relief remain distinct under neutral and grazing light; material review uses actual source crops.",
+      "Orbit and exploded inspection preserve seam contacts; rear and interior are explicitly labelled inferred."
+    ],
+    "minimumSpecDepth": {
+      "macroComponents": 3,
+      "mesoComponents": 8,
+      "microFeatureGroups": 5,
+      "materialLayers": 3,
+      "repetitionSystems": 1,
+      "reviewViewpoints": 4
+    },
+    "featureGroups": [
+      {
+        "id": "overall-silhouette",
+        "name": "Overall silhouette and proportions",
+        "required": true,
+        "qualityCriteria": [
+          "Bounding shape, dominant curves, negative spaces, and scale relationships are explicitly described."
+        ],
+        "evidenceRefs": [
+          "full-object"
+        ],
+        "failureModes": [
+          "model reads as a generic placeholder instead of the reference object",
+          "major proportions are guessed without evidence"
+        ]
+      },
+      {
+        "id": "primary-structure",
+        "name": "Primary structure and hierarchy",
+        "required": true,
+        "qualityCriteria": [
+          "Major parts, joints, seams, contact points, and parent-child relationships are named before code generation."
+        ],
+        "evidenceRefs": [
+          "full-object"
+        ],
+        "failureModes": [
+          "large visible parts are merged into one mesh",
+          "component hierarchy is too shallow for the observed complexity"
+        ]
+      },
+      {
+        "id": "attachment-joint-correctness",
+        "name": "Attachment and joint correctness",
+        "required": true,
+        "qualityCriteria": [
+          "Every visible child appendage, branch, limb, handle, connector, tube, cable, horn, wing, leg, or hinged part has an attachment contract with parent socket, localStart/localEnd, contact type, embed/overlap, and gap tolerance."
+        ],
+        "evidenceRefs": [
+          "full-object"
+        ],
+        "failureModes": [
+          "child part root floats away from the parent",
+          "branch/limb/tube is centered in space instead of pivoting from its root",
+          "parent-child transform mixes world and local coordinates"
+        ]
+      },
+      {
+        "id": "surface-material-response",
+        "name": "Surface material response",
+        "required": true,
+        "qualityCriteria": [
+          "Albedo zones, roughness, normal/bump/displacement intent, cavity dirt, edge wear, and local overrides are specified where visible.",
+          "Important materials define independent albedo, roughness, height/normal, and AO responses instead of reusing one texture for unrelated PBR channels.",
+          "Surface response is decomposed into macro, meso, and micro frequency bands with scale and amplitude tied to object scale."
+        ],
+        "evidenceRefs": [
+          "full-object"
+        ],
+        "failureModes": [
+          "surface looks like flat plastic",
+          "local material variation is missing or not tied to image evidence"
+        ]
+      },
+      {
+        "id": "reference-lookdev",
+        "name": "Reference color, material, and lighting response",
+        "required": true,
+        "qualityCriteria": [
+          "Material-pass names the reference-derived albedo palette, roughness variation, tactile normal/bump/displacement response, and local masks.",
+          "When a source image is available, run reference PBR extraction and require confidence >= 0.7 before treating maps as implementation-ready.",
+          "Lighting-pass names key/fill/rim or environment light, exposure, tone mapping, background, and contact shadow behavior.",
+          "Neutral, grazing-angle, and reference-matched renders prove that surface relief survives relighting and is not painted into albedo."
+        ],
+        "evidenceRefs": [
+          "full-object"
+        ],
+        "failureModes": [
+          "model has acceptable shape but reads as flat shaded or plastic",
+          "colors are a generic average instead of reference-observed local color zones",
+          "lighting is evenly ambient and cannot reproduce the source value range"
+        ]
+      }
+    ],
+    "visualDeltaChecks": [
+      "silhouette and negative-space delta",
+      "component hierarchy depth delta",
+      "repetition density and distribution delta",
+      "material albedo/roughness/normal response delta",
+      "local feature placement and scale delta"
+    ],
+    "antiShallowSpecRules": [
+      "Do not proceed to code if qualityContract.qualityBar is unassessed.",
+      "Do not proceed to code if the spec only contains a root component for a moderate or complex object.",
+      "Do not proceed to code if required featureGroups are not represented by componentTree, materials, or repetitionSystems.",
+      "Do not proceed to code if visible local features are described only in prose and not attached to components/materials/evidenceRefs.",
+      "Do not proceed past structural-pass if attached child parts lack attachment.parentSocket, localStart, localEnd, embedDepth/overlap, and gapTolerance.",
+      "Do not pass material look-dev when albedo is reused as roughness, height, normal, or AO.",
+      "Do not pass material look-dev without macro, meso, and micro surface frequency bands for close-up materials.",
+      "Do not pass reference-fidelity material look-dev from a source image without usable referencePbr maps or an explicit documented limitation.",
+      "Do not patch a spec with extracted PBR maps when extraction confidence is below the target threshold unless the user explicitly accepts lower fidelity.",
+      "Do not place adjacent separate-geometry parts below 0.02 world-unit seam overlap (source: grimoire/build/geometry_patterns.md).",
+      "Do not satisfy raised or recessed relief, fasteners, or grip structure with a map alone when the feature affects form; use geometry or displacement (source: grimoire/build/geometry_patterns.md).",
+      "Adjacent components must overlap by at least 0.02 world units at shared seams (source: grimoire/build/geometry_patterns.md).",
+      "Raised or recessed relief and fasteners must be geometry, instanced micro-parts, or displacement; a map alone is an approximation (source: grimoire/build/geometry_patterns.md)."
+    ],
+    "mustNotDo": [
+      "Do not proceed to code if qualityContract.qualityBar is unassessed.",
+      "Do not proceed to code if the spec only contains a root component for a moderate or complex object.",
+      "Do not proceed to code if required featureGroups are not represented by componentTree, materials, or repetitionSystems.",
+      "Do not proceed to code if visible local features are described only in prose and not attached to components/materials/evidenceRefs.",
+      "Do not proceed past structural-pass if attached child parts lack attachment.parentSocket, localStart, localEnd, embedDepth/overlap, and gapTolerance.",
+      "Do not pass material look-dev when albedo is reused as roughness, height, normal, or AO.",
+      "Do not pass material look-dev without macro, meso, and micro surface frequency bands for close-up materials.",
+      "Do not pass reference-fidelity material look-dev from a source image without usable referencePbr maps or an explicit documented limitation.",
+      "Do not patch a spec with extracted PBR maps when extraction confidence is below the target threshold unless the user explicitly accepts lower fidelity.",
+      "Do not place adjacent separate-geometry parts below 0.02 world-unit seam overlap (source: grimoire/build/geometry_patterns.md).",
+      "Do not satisfy raised or recessed relief, fasteners, or grip structure with a map alone when the feature affects form; use geometry or displacement (source: grimoire/build/geometry_patterns.md).",
+      "Adjacent components must overlap by at least 0.02 world units at shared seams (source: grimoire/build/geometry_patterns.md).",
+      "Raised or recessed relief and fasteners must be geometry, instanced micro-parts, or displacement; a map alone is an approximation (source: grimoire/build/geometry_patterns.md)."
+    ]
+  },
+  "authoringInstruction": "Fill observed object class, complexity reasoning, featureGroups, visualDeltaChecks, and unknowns before generating or implementing ObjectSculptSpec.",
+  "localSpecSearch": {
+    "collection": "core_3d",
+    "query": "Navy twill embroidered NY cap",
+    "index": {
+      "status": "hit",
+      "reason": "current",
+      "fingerprint": "06f0b2ece2935e441653f5c3533f91b3a4d6163f2aec4267559d7d8419bdd040"
+    },
+    "matches": [
+      {
+        "record_id": "core.runtime-hierarchy",
+        "file_path": "grimoire/readiness/action_rigging.md",
+        "heading": "Hierarchy Pattern",
+        "key_path": null,
+        "score": 3.062989966787,
+        "snippets": [
+          "An action-ready model uses a root, component pivot groups, visual meshes, sockets, collider metadata or proxies, and destruction-group metadata."
+        ],
+        "source_refs": [
+          {
+            "path": "grimoire/readiness/action_rigging.md",
+            "heading": "Hierarchy Pattern",
+            "key_path": null
+          }
+        ],
+        "evidence_refs": [
+          {
+            "kind": "source",
+            "ref": "grimoire/readiness/action_rigging.md"
+          },
+          {
+            "kind": "notebooklm-research",
+            "ref": "notebooklm:4b03c2f9-8393-411f-b5b4-039ab9532843",
+            "note": "Validated generic schema vocabulary; numeric claims remain backed by local source_refs."
+          }
+        ]
+      },
+      {
+        "record_id": "core.shader-mapping-tubegeometry-straps-cables-belts",
+        "file_path": "docs/raw/img2threejs-skill-dataset.json",
+        "heading": null,
+        "key_path": "categories.rendering_shader_mapping[10]",
+        "score": 2.850581391908,
+        "snippets": [
+          "... ammo belt draping into a receiver Dấu hiệu nhận diện: Bộ phận tuyến tính mềm dẻo chạy theo đường cong — dây đeo súng, cáp công tắc áp lực, dây băng đạn thõng vào thân súng Three.js target: TubeGeometry(curve, tubularSegments, radius, ..."
+        ],
+        "source_refs": [
+          {
+            "path": "docs/raw/img2threejs-skill-dataset.json",
+            "heading": null,
+            "key_path": "categories.rendering_shader_mapping[10]"
+          }
+        ],
+        "evidence_refs": [
+          {
+            "kind": "source",
+            "ref": "docs/raw/img2threejs-skill-dataset.json",
+            "note": "img2threejs NotebookLM research distillation"
+          }
+        ]
+      },
+      {
+        "record_id": "core.component-hierarchy",
+        "file_path": "grimoire/intake/image_analysis.md",
+        "heading": "Layer 3 — Macro → meso → micro decomposition",
+        "key_path": null,
+        "score": 2.546613861566,
+        "snippets": [
+          "Decompose an object into macro independent major parts, meso sub-assemblies, and micro feature groups in a parent-child hierarchy."
+        ],
+        "source_refs": [
+          {
+            "path": "grimoire/intake/image_analysis.md",
+            "heading": "Layer 3 — Macro → meso → micro decomposition",
+            "key_path": null
+          }
+        ],
+        "evidence_refs": [
+          {
+            "kind": "source",
+            "ref": "grimoire/intake/image_analysis.md"
+          },
+          {
+            "kind": "notebooklm-research",
+            "ref": "notebooklm:4b03c2f9-8393-411f-b5b4-039ab9532843",
+            "note": "Validated generic schema vocabulary; numeric claims remain backed by local source_refs."
+          }
+        ]
+      }
+    ]
+  },
+  "originalSourceImage": "C:/Users/AC1143/Project/Project/shop_vmd/cap_material_study/public/reference/cap-rgba.png"
+}

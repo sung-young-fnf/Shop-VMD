@@ -1,0 +1,4 @@
+[
+  {"id":"house-spec","command":"python {plugin_dir}/tools/gate.py --workspace {workspace} --gate spec","actor":"program","blocking":true,"after":[]},
+  {"id":"house-browser","command":"python {plugin_dir}/tools/gate.py --workspace {workspace} --gate browser","actor":"program","blocking":true,"after":["house-spec"]}
+]
