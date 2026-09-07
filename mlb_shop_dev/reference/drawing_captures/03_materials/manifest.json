@@ -1,0 +1,333 @@
+[
+  {
+    "file": "p003_metal_left.png",
+    "pdf_page": 3,
+    "crop_pdf_points": [
+      60,
+      180,
+      575,
+      790
+    ],
+    "render_scale": 3,
+    "purpose": "MT01-04 finish samples and conflicts",
+    "component_codes": [
+      "MT-01",
+      "MT-02",
+      "MT-03",
+      "MT-04"
+    ]
+  },
+  {
+    "file": "p003_metal_right.png",
+    "pdf_page": 3,
+    "crop_pdf_points": [
+      615,
+      25,
+      1130,
+      790
+    ],
+    "render_scale": 3,
+    "purpose": "Duplicated MT06 blue metal and mesh; profile and facade samples",
+    "component_codes": [
+      "MT-05",
+      "MT-06",
+      "MT-07",
+      "MT-08",
+      "MT-09"
+    ]
+  },
+  {
+    "file": "p004_acrylic.png",
+    "pdf_page": 4,
+    "crop_pdf_points": [
+      60,
+      250,
+      575,
+      592
+    ],
+    "render_scale": 3,
+    "purpose": "Blue and gray acrylic finish samples",
+    "component_codes": [
+      "AC-01",
+      "AC-02"
+    ]
+  },
+  {
+    "file": "p004_fabric01.png",
+    "pdf_page": 4,
+    "crop_pdf_points": [
+      615,
+      250,
+      1130,
+      395
+    ],
+    "render_scale": 3,
+    "purpose": "Textile texture sample",
+    "component_codes": [
+      "FB-01"
+    ]
+  },
+  {
+    "file": "p004_facade_mesh.png",
+    "pdf_page": 4,
+    "crop_pdf_points": [
+      615,
+      645,
+      1130,
+      820
+    ],
+    "render_scale": 3,
+    "purpose": "Facade belt mesh construction",
+    "component_codes": [
+      "ME-01"
+    ]
+  },
+  {
+    "file": "p005_paint_left.png",
+    "pdf_page": 5,
+    "crop_pdf_points": [
+      60,
+      250,
+      575,
+      790
+    ],
+    "render_scale": 3,
+    "purpose": "Paint samples PT01-03",
+    "component_codes": [
+      "PT-01",
+      "PT-02",
+      "PT-03"
+    ]
+  },
+  {
+    "file": "p005_wood_paint_right.png",
+    "pdf_page": 5,
+    "crop_pdf_points": [
+      615,
+      50,
+      1130,
+      592
+    ],
+    "render_scale": 3,
+    "purpose": "Birdseye wood, granite and column paint",
+    "component_codes": [
+      "WD-01",
+      "PT-04",
+      "PT-05"
+    ]
+  },
+  {
+    "file": "p006_lighting_left.png",
+    "pdf_page": 6,
+    "crop_pdf_points": [
+      60,
+      250,
+      575,
+      820
+    ],
+    "render_scale": 3,
+    "purpose": "Barrisol and black magnetic luminaire dimensions",
+    "component_codes": [
+      "ETC-01",
+      "L-01",
+      "L-02"
+    ]
+  },
+  {
+    "file": "p006_lighting_right.png",
+    "pdf_page": 6,
+    "crop_pdf_points": [
+      615,
+      50,
+      1130,
+      815
+    ],
+    "render_scale": 3,
+    "purpose": "Gate facade furniture light product and section specs",
+    "component_codes": [
+      "L-03",
+      "L-04",
+      "L-05",
+      "L-06"
+    ]
+  },
+  {
+    "file": "p007_window_hardware.png",
+    "pdf_page": 7,
+    "crop_pdf_points": [
+      60,
+      250,
+      575,
+      790
+    ],
+    "render_scale": 3,
+    "purpose": "Pulley chain and H beam components",
+    "component_codes": [
+      "FX-01",
+      "FX-02",
+      "FX-03"
+    ]
+  },
+  {
+    "file": "p007_folding_shutter.png",
+    "pdf_page": 7,
+    "crop_pdf_points": [
+      615,
+      250,
+      1130,
+      395
+    ],
+    "render_scale": 3,
+    "purpose": "Accordion shutter reference",
+    "component_codes": [
+      "FX-04"
+    ]
+  },
+  {
+    "file": "p023_ceiling_finish_plan.png",
+    "pdf_page": 23,
+    "crop_pdf_points": [
+      60,
+      90,
+      775,
+      710
+    ],
+    "render_scale": 3,
+    "purpose": "Ceiling retained versus refinished zones and dimensions",
+    "component_codes": [
+      "PT-05"
+    ]
+  },
+  {
+    "file": "p023_ceiling_finish_notes.png",
+    "pdf_page": 23,
+    "crop_pdf_points": [
+      875,
+      45,
+      1145,
+      490
+    ],
+    "render_scale": 3,
+    "purpose": "Ceiling paint legend and conflicting beam note",
+    "component_codes": [
+      "PT-02",
+      "PT-05"
+    ]
+  },
+  {
+    "file": "p024_electrical_plan.png",
+    "pdf_page": 24,
+    "crop_pdf_points": [
+      200,
+      160,
+      775,
+      690
+    ],
+    "render_scale": 3,
+    "purpose": "New and retained outlets switches customization location",
+    "component_codes": []
+  },
+  {
+    "file": "p025_barrisol_plan.png",
+    "pdf_page": 25,
+    "crop_pdf_points": [
+      210,
+      150,
+      790,
+      670
+    ],
+    "render_scale": 3,
+    "purpose": "Central curved rectangular counter and fitting-room luminous ceilings",
+    "component_codes": [
+      "ETC-01"
+    ]
+  },
+  {
+    "file": "p025_barrisol_sections.png",
+    "pdf_page": 25,
+    "crop_pdf_points": [
+      780,
+      145,
+      1150,
+      740
+    ],
+    "render_scale": 3,
+    "purpose": "5000K LED 50 spacing frame layers height sections",
+    "component_codes": [
+      "ETC-01",
+      "MT-01",
+      "MT-02"
+    ]
+  },
+  {
+    "file": "p026_track_plan.png",
+    "pdf_page": 26,
+    "crop_pdf_points": [
+      160,
+      155,
+      775,
+      650
+    ],
+    "render_scale": 3,
+    "purpose": "Track location and added rail dimensions",
+    "component_codes": [
+      "L-01",
+      "L-02"
+    ]
+  },
+  {
+    "file": "p026_lighting_legend.png",
+    "pdf_page": 26,
+    "crop_pdf_points": [
+      42,
+      647,
+      530,
+      746
+    ],
+    "render_scale": 3,
+    "purpose": "4000K magnetic fixtures 54+2 and19; raceway45",
+    "component_codes": [
+      "L-01",
+      "L-02"
+    ]
+  },
+  {
+    "file": "p026_raceway_height.png",
+    "pdf_page": 26,
+    "crop_pdf_points": [
+      880,
+      495,
+      1015,
+      643
+    ],
+    "render_scale": 3,
+    "purpose": "Raceway height2800 section",
+    "component_codes": []
+  },
+  {
+    "file": "p027_hvac_plan.png",
+    "pdf_page": 27,
+    "crop_pdf_points": [
+      210,
+      165,
+      775,
+      640
+    ],
+    "render_scale": 3,
+    "purpose": "Four new cassette AC positions and offsets",
+    "component_codes": []
+  },
+  {
+    "file": "p028_security_audio_plan.png",
+    "pdf_page": 28,
+    "crop_pdf_points": [
+      210,
+      165,
+      775,
+      640
+    ],
+    "render_scale": 3,
+    "purpose": "Eight CCTV and six speaker marked positions",
+    "component_codes": []
+  }
+]

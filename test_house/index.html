@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#d6e3da" />
+    <meta name="description" content="도면에서 시작한 숲속의 집. 외관을 둘러보고 지붕을 열어 공간을 탐색하는 인터랙티브 3D 하우스." />
+    <title>Forest House · 도면에서 공간으로</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23214840'/%3E%3Cpath d='M14 32 32 16 50 32M20 28v22h24V28M28 50V36h8v14' fill='none' stroke='%23dfe9cc' stroke-width='4'/%3E%3C/svg%3E" />
+  </head>
+  <body>
+    <main id="app" aria-label="Forest House 3D 공간 탐색">
+      <div id="scene" role="img" aria-label="마우스로 회전하고 확대할 수 있는 집 모형"></div>
+      <header class="brand"><span class="brand-mark" id="brand-mark"></span><div><h1>Forest House<span>.</span></h1><p>A QUIET PLACE TO CALL HOME</p></div></header>
+      <div class="top-actions"><span class="status-chip"><span class="status-dot"></span><span id="weather-label">햇살 좋은 오후</span></span><button id="night" class="action surface" aria-label="밤 풍경" aria-pressed="false"></button><button id="reference" class="action surface">참고 이미지</button></div>
+      <aside class="explorer panel" aria-label="공간 선택"><p class="eyebrow">FROM PLAN TO PLACE</p><h2>숲을 닮은 집</h2><p class="intro">처마 아래 머물고,<br />공간 사이를 천천히 거닐어요.</p><div class="panel-rule"></div><div class="room-list" id="room-list"></div><div class="panel-foot"><span>도면을 바탕으로 만든 공간</span><span>01 / 01</span></div><button class="primary action" id="explore">지붕을 열어 둘러보기 <span aria-hidden="true">↗</span></button></aside>
+      <section class="room-detail surface" id="room-detail" hidden aria-live="polite"><p class="eyebrow" id="room-english"></p><h2 id="room-name"></h2><p id="room-description"></p><div><span id="room-area"></span><span>도면 기준 · 가구는 연출</span></div></section>
+      <div class="scene-caption"><span class="eyebrow" id="view-number">01 — EXTERIOR</span><span id="view-caption">한 걸음 떨어져, 집 전체를 바라보세요.</span></div>
+      <div class="bottom-controls"><p class="gesture-hint"><span>드래그로 회전</span><i></i><span>스크롤로 확대</span><i></i><span>공간을 눌러 탐색</span></p><nav class="toolbar surface" aria-label="3D 보기 도구"><div class="view-tabs" id="view-tabs"></div><span class="toolbar-divider"></span><button id="rotate" class="icon-action" aria-label="자동 회전" aria-pressed="false"></button><button id="zoom-in" class="icon-action" aria-label="확대"></button><button id="zoom-out" class="icon-action" aria-label="축소"></button><button id="explode" class="icon-action" aria-label="구조 분해 보기" aria-pressed="false"></button><button id="reset" class="icon-action" aria-label="처음 시점으로"></button></nav></div>
+      <footer><span>BUILT FROM YOUR BLUEPRINT</span><span class="compass" id="compass" aria-label="도면 상단 방향"><span>N</span><span id="compass-arrow">↑</span></span></footer>
+      <section id="loading" class="loading surface" role="status"><span class="loading-orbit"></span><h2>집에 빛을 들이는 중</h2><p>공간을 준비하고 있어요.</p></section>
+    </main>
+    <dialog id="reference-dialog" aria-labelledby="reference-title"><div class="dialog-heading"><div><p class="eyebrow">THE ORIGINAL REFERENCES</p><h2 id="reference-title">이 집의 시작</h2></div><button class="icon-action" id="close-dialog" aria-label="참고 이미지 닫기">✕</button></div><div id="reference-tabs" class="reference-tabs"></div><div class="reference-image"><img id="reference-image" alt="집의 원본 평면도" /></div><div class="reference-note"><p id="reference-note"></p><a id="reference-original" target="_blank" rel="noreferrer">원본 크게 보기 ↗</a></div></dialog>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

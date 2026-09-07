@@ -1,0 +1,14 @@
+import { chromium } from 'playwright';
+import { mkdir, writeFile } from 'node:fs/promises';
+const destination='evidence/current';
+await mkdir(destination,{recursive:true});
+const browser=await chromium.launch({headless:true,executablePath:'C:/Users/AC1143/AppData/Local/ms-playwright/chromium-1223/chrome-win64/chrome.exe',args:['--enable-webgl','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+const page=await browser.newPage({viewport:{width:1440,height:1000},deviceScaleFactor:1});
+const errors=[];page.on('pageerror',e=>errors.push(e.message));
+await page.goto('http://127.0.0.1:5173');await page.waitForFunction(()=>document.documentElement.dataset.sceneReady==='true');
+await page.waitForFunction(()=>!window.houseScene.inspect().moving);await page.screenshot({path:`${destination}/exterior.png`});
+await page.getByRole('button',{name:'실내',exact:true}).click();await page.waitForTimeout(1800);await page.screenshot({path:`${destination}/interior.png`});
+await page.getByRole('button',{name:'평면',exact:true}).click();await page.waitForTimeout(1800);await page.screenshot({path:`${destination}/plan.png`});
+await page.getByRole('button',{name:'처음 시점으로'}).click();await page.setViewportSize({width:375,height:812});await page.getByRole('button',{name:'처음 시점으로'}).click();await page.waitForTimeout(1800);await page.screenshot({path:`${destination}/mobile.png`});
+const report=await page.evaluate(()=>window.houseScene.inspect());await writeFile(`${destination}/inspect.json`,JSON.stringify({errors,report},null,2));console.log(JSON.stringify({errors,drawCalls:report.drawCalls,triangles:report.triangles,moving:report.moving}));
+await browser.close();

@@ -1,0 +1,5 @@
+[
+  {"id":"house-intake","title":"Read measured house references","actor":"agent","command":"Read {plugin_dir}/reference/reconstruction.md and inspect every image in {image}. Write house-spec.json in {workspace} using the evidence contract in {plugin_dir}/reference/evidence.md.","after":[]},
+  {"id":"house-assembly","title":"Build procedural architectural assemblies","actor":"agent","command":"Use {spec} to build named roof, envelope, porch and interior assemblies in {workspace}. Render cardinal directions and overhead; fix footprint, openings and roof intersections before materials.","after":["house-intake"]},
+  {"id":"house-browser","title":"Exercise the real house experience","actor":"agent","command":"Run the website in {workspace}. Capture actual browser views and interaction checks, hash current sources and PNG evidence, then write .img2/artifacts/house/browser-qa.json according to {plugin_dir}/reference/evidence.md.","after":["house-assembly"]}
+]

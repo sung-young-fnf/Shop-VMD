@@ -1,0 +1,270 @@
+[
+  {
+    "file": "p008_facade_elevation.png",
+    "pdf_page": 8,
+    "crop_pdf_points": [
+      85,
+      190,
+      1135,
+      740
+    ],
+    "render_scale": 3,
+    "purpose": "Final facade overall dimensions and two mesh tiers",
+    "component_codes": [
+      "MT-09",
+      "ME-01",
+      "L-04",
+      "L-06"
+    ]
+  },
+  {
+    "file": "p009_fins_plan.png",
+    "pdf_page": 9,
+    "crop_pdf_points": [
+      40,
+      30,
+      880,
+      330
+    ],
+    "render_scale": 3,
+    "purpose": "Louver spacing and 200x20 section with mesh fixing",
+    "component_codes": [
+      "MT-09",
+      "ME-01"
+    ]
+  },
+  {
+    "file": "p009_fins_elevation.png",
+    "pdf_page": 9,
+    "crop_pdf_points": [
+      42,
+      338,
+      1100,
+      747
+    ],
+    "render_scale": 3,
+    "purpose": "15910 width 26 divisions and clear mesh heights",
+    "component_codes": [
+      "MT-09",
+      "ME-01",
+      "L-04",
+      "L-06"
+    ]
+  },
+  {
+    "file": "p010_fins_section.png",
+    "pdf_page": 10,
+    "crop_pdf_points": [
+      40,
+      38,
+      440,
+      580
+    ],
+    "render_scale": 3,
+    "purpose": "Slab connection bracket pipe and louver projection",
+    "component_codes": [
+      "MT-09",
+      "ME-01"
+    ]
+  },
+  {
+    "file": "p010_entry_section.png",
+    "pdf_page": 10,
+    "crop_pdf_points": [
+      730,
+      110,
+      1145,
+      740
+    ],
+    "render_scale": 3,
+    "purpose": "Entrance head glazing logo and lighting sectional build-up",
+    "component_codes": [
+      "MT-05",
+      "MT-08",
+      "L-05",
+      "L-06"
+    ]
+  },
+  {
+    "file": "p011_steel_elevation.png",
+    "pdf_page": 11,
+    "crop_pdf_points": [
+      160,
+      250,
+      1140,
+      737
+    ],
+    "render_scale": 3,
+    "purpose": "Backing H-beam sizes and existing brick-window layer",
+    "component_codes": []
+  },
+  {
+    "file": "p012_banner_frame.png",
+    "pdf_page": 12,
+    "crop_pdf_points": [
+      40,
+      220,
+      520,
+      735
+    ],
+    "render_scale": 3,
+    "purpose": "6000 wide side frame 5550 high eye bolts and reinforcement",
+    "component_codes": []
+  },
+  {
+    "file": "p012_banner_graphic.png",
+    "pdf_page": 12,
+    "crop_pdf_points": [
+      605,
+      248,
+      1039,
+      735
+    ],
+    "render_scale": 3,
+    "purpose": "Banner image 6000x5500 vs order 6060x5560",
+    "component_codes": []
+  },
+  {
+    "file": "p012_banner_connection.png",
+    "pdf_page": 12,
+    "crop_pdf_points": [
+      445,
+      55,
+      880,
+      235
+    ],
+    "render_scale": 3,
+    "purpose": "40x60 frame and 40x40 anchors side offset",
+    "component_codes": []
+  },
+  {
+    "file": "p013_banner_perspective.png",
+    "pdf_page": 13,
+    "crop_pdf_points": [
+      440,
+      32,
+      810,
+      551
+    ],
+    "render_scale": 3,
+    "purpose": "Perspective of projecting banner frame upper and intermediate fixings",
+    "component_codes": []
+  },
+  {
+    "file": "p014_facade_corner.png",
+    "pdf_page": 14,
+    "crop_pdf_points": [
+      42,
+      369,
+      638,
+      740
+    ],
+    "render_scale": 3,
+    "purpose": "Design rendering corner relationship of fins and banner",
+    "component_codes": []
+  },
+  {
+    "file": "p015_temporary_enclosure.png",
+    "pdf_page": 15,
+    "crop_pdf_points": [
+      147,
+      216,
+      1130,
+      737
+    ],
+    "render_scale": 3,
+    "purpose": "Temporary enclosure 16610x10000 exclusion evidence",
+    "component_codes": []
+  },
+  {
+    "file": "p016_temporary_photo.png",
+    "pdf_page": 16,
+    "crop_pdf_points": [
+      44,
+      365,
+      728,
+      739
+    ],
+    "render_scale": 3,
+    "purpose": "Construction enclosure photograph exclusion evidence",
+    "component_codes": []
+  },
+  {
+    "file": "p017_entry_plan_elevation.png",
+    "pdf_page": 17,
+    "crop_pdf_points": [
+      60,
+      45,
+      1120,
+      468
+    ],
+    "render_scale": 3,
+    "purpose": "Entry 6000 assembly blue panels glass and swing doors",
+    "component_codes": [
+      "MT-05",
+      "MT-02",
+      "PT-03"
+    ]
+  },
+  {
+    "file": "p017_entry_handle.png",
+    "pdf_page": 17,
+    "crop_pdf_points": [
+      42,
+      464,
+      747,
+      735
+    ],
+    "render_scale": 3,
+    "purpose": "Baseball stitch semicircle handle dimensions and window trim",
+    "component_codes": [
+      "MT-05",
+      "MT-02"
+    ]
+  },
+  {
+    "file": "p101_logo_elevation.png",
+    "pdf_page": 101,
+    "crop_pdf_points": [
+      46,
+      290,
+      915,
+      725
+    ],
+    "render_scale": 3,
+    "purpose": "1400 width 365 total height neon 3000K logo construction",
+    "component_codes": [
+      "MT-02"
+    ]
+  },
+  {
+    "file": "p101_logo_section.png",
+    "pdf_page": 101,
+    "crop_pdf_points": [
+      899,
+      28,
+      1143,
+      695
+    ],
+    "render_scale": 3,
+    "purpose": "Logo 250 depth support and neon profile",
+    "component_codes": [
+      "MT-02"
+    ]
+  },
+  {
+    "file": "p102_standing_sign.png",
+    "pdf_page": 102,
+    "crop_pdf_points": [
+      110,
+      64,
+      1140,
+      737
+    ],
+    "render_scale": 3,
+    "purpose": "A frame blue sign all views and 30 degree opening",
+    "component_codes": [
+      "MT-08"
+    ]
+  }
+]

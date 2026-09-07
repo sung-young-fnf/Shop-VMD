@@ -1,0 +1,25 @@
+import { chromium } from 'playwright';
+import { mkdir } from 'node:fs/promises';
+
+const directory = 'src/architecture/evidence';
+await mkdir(directory, { recursive: true });
+const browser = await chromium.launch({ channel: 'chrome', headless: true });
+const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
+page.on('pageerror', (error) => console.error(error.message));
+await page.goto('http://127.0.0.1:5176/');
+await page.waitForFunction(() => window.__MLB_DEBUG__?.sceneReady && window.__MLB_DEBUG__?.cameraSettled, undefined, { timeout: 120000 });
+await page.screenshot({ path: `${directory}/diorama.png` });
+await page.locator('.view-list button').nth(1).click();
+await page.waitForFunction(() => window.__MLB_DEBUG__?.cameraSettled);
+await page.screenshot({ path: `${directory}/exterior.png` });
+await page.locator('.view-list button').nth(2).click();
+await page.waitForFunction(() => window.__MLB_DEBUG__?.cameraSettled);
+await page.screenshot({ path: `${directory}/interior.png` });
+await page.locator('.zone-list button').nth(7).click();
+await page.waitForFunction(() => window.__MLB_DEBUG__?.cameraSettled);
+await page.screenshot({ path: `${directory}/fitting.png` });
+await page.locator('.zone-list button').nth(8).click();
+await page.waitForFunction(() => window.__MLB_DEBUG__?.cameraSettled);
+await page.screenshot({ path: `${directory}/upper.png` });
+console.log(JSON.stringify(await page.evaluate(() => { const state = window.__MLB_DEBUG__; return { view: state.view, zone: state.zone, sceneReady: state.sceneReady, cameraSettled: state.cameraSettled, stats: state.stats, counts: state.architectureCounts }; }), null, 2));
+await browser.close();

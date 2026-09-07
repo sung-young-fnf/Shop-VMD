@@ -1,0 +1,88 @@
+※ 2개 집기 사이 가와 1개로 제작
+
+                                                         매쉬망 고정철물
+                                                     1,173                                             KARUMEL 분체도장
+                                                                                                            22-243 EX-4505(S)-MP-BK029
+                                                                                                                                 147
+                                                                                                       1  20  1   MT-01
+
+                                                                                           T3 매쉬망
+                                                                      MT-06
+                      400
+                                                 3                15      20
+                                                                                                    지정 매쉬망 (가로로 긴 패턴)
+                                                                                                    10
+                                               ● 하부장 상세도             MT-06
+
+                                                                                                                                                                                    1,166                                               400                                    400
+                 A  ELEVATION          프레임: KARUMEL 분체도장
+                                                              22-243 EX-4505(S)-MP-BK029
+                                  1  1:15
+                                                          MT-01                                                  23                            1,120                        23                                                   25       360       15
+                        MT-06     T3 매쉬망: 1,116                                               B
+                                                       C        C  DETAIL                                  2
+                            15
+                                                                        2                  2   6:1                 23                                                                                                                    23
+
+
+                      400                 360
+                                                                                                                                                                                                                367                                                                                                                                                                              367
+                                                                                                                                                                                                             1B
+
+                            25
+                                                                                                                                          25                                                                                                                    25
+                    23                            1,120               프레임:23  KARUMEL 분체도장     MT-01
+                                                                             22-243 EX-4505(S)-MP-BK029
+                 B  SECTION            선반: KARUMEL 분체도장      MT-01
+                                  1  1:15                     22-243 EX-4505(S)-MP-BK029                                                                         333                                                                                                                                                                              333
+                           B                                                                                                   프레임: KARUMEL 분체도장
+ ● 선반 상세도                            2                                                                                                                                                       22-243 EX-4505(S)-MP-BK029
+
+                                                                                                                                                                     MT-01
+                                                                                                                                          25                                                                                                                    25
+
+                                                     1,120
+
+                                                                                                                                                                                                                333                                                                                                                                                                              333
+
+                                                                                                                                                          프레임: KARUMEL 분체도장  MT-01
+                                                                                                                                                                                                                                           22-243 EX-4505(S)-MP-BK029
+                            320                                                                                                                      25                                                                                                                    25                     360
+                      20                                                                                                                                                                                                                                                                           2,500                                                                                                                                                                                                           2,500                                                                                 2,500                   20                                                                                                                                                                                 333                                                                                                                                                                              333
+
+
+
+                                                     1,120                                                                                  25                                                                                                                    25
+
+                  25                                                                                                                                                                                               MT-01
+                                                                                                                                                                                                                333                                                                                                                                                                              333              선반: KARUMEL 분체도장                                                                                                                                                                                                                                                                        22-243 EX-4505(S)-MP-BK029
+                  선반: KARUMEL 분체도장     MT-01
+                          22-243 EX-4505(S)-MP-BK029
+
+                                                                                                                                          25                                                                                                                    25
+
+
+                                                 360
+                                                                                                                                                                                                                328                                                                                                                                                                              327
+
+                  25
+                                      전선 타공
+                    10 20  30                         300             뒷판 후면으로 전선 보내어 SMPS연결                   25                                                                                                                    25
+
+
+              왼쪽에 조명 5Φ 전선홈 반원따기                                                                                                                   300              하부장                                                                                                                          300       하부장
+                                                                                                                                              전선 구멍 타공
+                        LED (4,000K)
+
+                                                                 5                                         5                5                   30
+                                                                                                                                                                                                                                                   180   50   170
+                C  SHELF DETAIL                                                                                        A  ELEVATION               조절발 설치 A  ELEVATION             B  ELEVATION                                  1  3:1
+                                                                                                                                                                                 2  1:15                                                        3  1:15                                   2  1:15
+
+
+                                            ① 수량 : 5 SET          ④                     DRAWN BY.  CHECKED BY.    DATE          SCALE        DRAWING NO.               ■ PROJECT TITLE  ■ DRAWING TITLE
+
+                                            ②                ⑤                                                                 A3
+                                            ML-W-02_SH                                                                                여 지 윤        -           2025.02.06
+      121, Digital-ro, Geumcheon-gu, Seoul, Republic of Korea       성수동 로드샵       SHOES CABINET  ③                ⑥                                                                            1/15
+            Tel 82_2_3016_7985 / Fax  : 82_2_3016_7986

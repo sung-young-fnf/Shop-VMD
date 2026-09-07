@@ -1,0 +1,18 @@
+{
+  "status": "pass",
+  "source_sha256": "4add8476b1229027cdcd1c382029e964034d8fd534e375d9d416a12294a239a9",
+  "whole_pages": 106,
+  "overview_images": 7,
+  "detail_counts": {
+    "01_facade": 18,
+    "02_spatial": 18,
+    "03_materials": 21,
+    "04_wall_fixtures": 46,
+    "05_central_service": 40,
+    "06_upper_boh": 8
+  },
+  "detail_total": 151,
+  "checked_links": 380,
+  "issues": [],
+  "scope": "PDF analysis and local image evidence; not Three.js runtime QA"
+}
