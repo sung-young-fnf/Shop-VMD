@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import { detachClothing } from "../clothing-placement";
 import { mergeGeometries } from "three/addons/utils/BufferGeometryUtils.js";
 import { materials } from "./primitives";
 
@@ -106,6 +107,7 @@ export function applyWoodGrain(): void {
 }
 
 export function batchFixture(group: THREE.Group): void {
+	const clothing = detachClothing(group);
 	group.updateMatrixWorld(true);
 	const inverse = group.matrixWorld.clone().invert();
 	const batches = new Map<THREE.Material, THREE.BufferGeometry[]>();
@@ -156,6 +158,7 @@ export function batchFixture(group: THREE.Group): void {
 	});
 	group.userData["batchedProductIds"] = productIds;
 	group.clear();
+	for (const product of clothing) group.add(product);
 	for (const mesh of multiMaterial) group.add(mesh);
 	for (const [material, geometries] of batches) {
 		const merged = mergeGeometries(geometries, false);

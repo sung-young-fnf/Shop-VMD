@@ -10,6 +10,8 @@ Development ports are 5175 (live editing) and 4175 (built preview), bound to 0.0
 
 ## 1. Direction and source
 
+Clothing fidelity pilot2026-09-08: CHICAGO M26F3AMTV0164 uses same-SKU official front/rear photographs with source-pixel appearance preserved. This is explicitly a photo-textured2.5D study, not relightable PBR or CLO geometry. Side color#20364f and approximately8cm assembled depth are inferred; front silhouette is traced from image alpha. Other SKUs keep their prior representation. Follow evidence/clothes-fidelity-20260908/PLAN.md and its fresh multi-angle evidence; do not copy logos procedurally or promote to operating without user request.
+
 Adapt the established Ciudad Jardin interaction system documented in ../test_house/DESIGN.md and ../test_house/evidence/reference-site/ANALYSIS.md (observed 2026-09-07): full viewport diorama, floating destination panel, upper-right environment actions, bottom view controls. This is an existing design-system adaptation. The store has ivory architectural atmosphere, charcoal editorial typography, cobalt selected accents, and visibly metallic/blue/wood fixtures. The signature is the detailed open store section; exterior reveals the tall branded facade. No housing landscape styling transfers.
 
 ## 2. Color tokens

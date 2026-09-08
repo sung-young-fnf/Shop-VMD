@@ -1,20 +1,39 @@
 import * as THREE from "three";
 import { clothesCatalog } from "./catalog";
-import { foldedFace, foldedShell, garmentGeometry } from "./geometry";
+import {
+	foldedFace,
+	foldedShell,
+	garmentGeometry,
+	rearGarmentGeometry,
+} from "./geometry";
 
 const loader = new THREE.TextureLoader();
-const products = clothesCatalog.map((reference) => {
+function photoMaterial(texture: THREE.Texture, color: string) {
+	const material = new THREE.MeshBasicMaterial({
+		map: texture,
+		toneMapped: false,
+	});
+	material.onBeforeCompile = (shader) => {
+		shader.uniforms["clothUndercoat"] = { value: new THREE.Color(color) };
+		shader.fragmentShader =
+			`uniform vec3 clothUndercoat;\n${shader.fragmentShader}`.replace(
+				"#include <map_fragment>",
+				"vec4 clothPhoto = texture2D(map, vMapUv); diffuseColor.rgb *= mix(clothUndercoat, clothPhoto.rgb, clothPhoto.a);",
+			);
+	};
+	material.customProgramCacheKey = () => "clothing-photo-coverage-v1";
+	material.userData["referenceCoverage"] =
+		"source photo alpha over inferred opaque cloth";
+	return material;
+}
+function loadProduct(reference: (typeof clothesCatalog)[number]) {
 	const texture = loader.load(
 		`${import.meta.env.BASE_URL}products/clothes/${reference.frontImage ?? `${reference.id}.png`}`,
 	);
 	texture.colorSpace = THREE.SRGBColorSpace;
 	texture.anisotropy = 4;
 	const printed = reference.rearImage
-		? new THREE.MeshBasicMaterial({
-				map: texture,
-				alphaTest: 0.4,
-				toneMapped: false,
-			})
+		? photoMaterial(texture, reference.color)
 		: new THREE.MeshStandardMaterial({
 				map: texture,
 				roughness: 0.92,
@@ -44,18 +63,31 @@ const products = clothesCatalog.map((reference) => {
 		);
 		rearTexture.colorSpace = THREE.SRGBColorSpace;
 		rearTexture.anisotropy = 4;
-		const material = new THREE.MeshBasicMaterial({
-			map: rearTexture,
-			alphaTest: 0.4,
-			toneMapped: false,
-		});
+		const material = photoMaterial(rearTexture, reference.color);
 		material.userData["referenceProduct"] = true;
 		material.userData["productId"] = reference.id;
-		rear = new THREE.Mesh(geometry.face.clone().rotateY(Math.PI), material);
+		rear = new THREE.Mesh(
+			rearGarmentGeometry(geometry.face, reference.rearProjection),
+			material,
+		);
 		rear.name = "reference-rear-surface";
 	}
-	return { reference, printed, fabric, geometry, rear };
-});
+	const foldedRear = foldedFace.clone();
+	foldedRear.scale(1, -1, 1);
+	const foldedRearIndex = foldedRear.index;
+	if (foldedRearIndex) {
+		for (let i = 0; i < foldedRearIndex.count; i += 3) {
+			const second = foldedRearIndex.getX(i + 1);
+			foldedRearIndex.setX(i + 1, foldedRearIndex.getX(i + 2));
+			foldedRearIndex.setX(i + 2, second);
+		}
+	}
+	foldedRear.translate(0, 0.0345, 0);
+	const rearUv = foldedRear.getAttribute("uv");
+	for (let i = 0; i < rearUv.count; i++) rearUv.setX(i, 1 - rearUv.getX(i));
+	return { reference, printed, fabric, geometry, rear, foldedRear };
+}
+const products = new Map<string, ReturnType<typeof loadProduct>>();
 const hangerMaterial = new THREE.MeshStandardMaterial({
 	color: "#a3a5a5",
 	roughness: 0.28,
@@ -84,21 +116,30 @@ const hookGeometry = new THREE.TubeGeometry(
 	false,
 );
 
-function productAt(index: number) {
-	return (
-		products[
-			((Math.trunc(index) % products.length) + products.length) %
-				products.length
-		] ?? products[0]
-	);
+function productAt(index: number | string) {
+	const reference =
+		typeof index === "string"
+			? clothesCatalog.find((item) => item.id === index)
+			: Number.isInteger(index)
+				? clothesCatalog[index]
+				: undefined;
+	if (!reference) throw new RangeError(`Unknown clothing assignment: ${index}`);
+	const cached = products.get(reference.id);
+	if (cached) return cached;
+	const product = loadProduct(reference);
+	products.set(reference.id, product);
+	return product;
 }
 
-export function createGarment(index: number): THREE.Group {
+export function createGarment(index: number | string): THREE.Group {
 	const product = productAt(index);
 	const group = new THREE.Group();
 	if (!product) return group;
 	group.name = `reference-garment-${product.reference.id}`;
 	group.userData["productId"] = product.reference.id;
+	group.userData["frontImage"] = product.reference.frontImage;
+	group.userData["rearImage"] = product.reference.rearImage;
+	group.userData["category"] = product.reference.category;
 	group.userData["referenceView"] = product.reference.view;
 	group.userData["hiddenSurface"] = product.rear
 		? "Front and rear photographs; seam thickness and hanging depth inferred"
@@ -124,17 +165,29 @@ export function createGarment(index: number): THREE.Group {
 	return group;
 }
 
-export function createFoldedGarment(index: number): THREE.Group {
+export function createFoldedGarment(index: number | string): THREE.Group {
 	const product = productAt(index);
 	const group = new THREE.Group();
 	if (!product) return group;
 	group.name = `reference-folded-${product.reference.id}`;
 	group.userData["productId"] = product.reference.id;
+	group.userData["frontImage"] = product.reference.frontImage;
+	group.userData["rearImage"] = product.reference.rearImage;
+	group.userData["category"] = product.reference.category;
+	group.userData["representation"] =
+		"photo-textured 2.5D; inferred folding and depth";
 	group.userData["foldedLayout"] =
 		"Inferred folding; actual source torso pixels";
 	const body = new THREE.Mesh(foldedShell, product.fabric);
 	body.castShadow = true;
 	body.receiveShadow = true;
-	group.add(body, new THREE.Mesh(foldedFace, product.printed));
+	const front = new THREE.Mesh(foldedFace, product.printed);
+	front.name = "reference-visible-surface";
+	group.add(body, front);
+	if (product.rear) {
+		const rear = new THREE.Mesh(product.foldedRear, product.rear.material);
+		rear.name = "reference-rear-surface";
+		group.add(rear);
+	}
 	return group;
 }

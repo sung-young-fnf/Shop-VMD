@@ -22,6 +22,7 @@ description: Build interactive Three.js retail spaces and VMD scenes from store 
 | 카메라·선택·웹 UI 구현 전 | [탐색 경험과 렌더링](references/experience.md) |
 | 검증 계획 작성과 각 구현 단계 확인 | [VMD 및 브라우저 QA](references/qa.md) |
 | 공식 img2 하네스를 사용할 때 | [하네스 연결과 플러그인 경계](references/harness.md) |
+| 실제 상품 사진으로 의류 질감·로고·앞뒷면 표현을 개선할 때 | [실제 상품 사진 기반 실사 표현 스킬](../product-photo-realism/SKILL.md) |
 
 ## 구현 순서와 산출물
 

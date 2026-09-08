@@ -1,6 +1,8 @@
 import * as THREE from "three";
 import { box, materials } from "./primitives";
 import { bag, cap, garment } from "./merchandise";
+import { clothingAt } from "../clothing-placement";
+import { placeCapOnSupport } from "../products/caps/placement";
 
 export function slopedLight(width: number): THREE.Group {
 	const group = new THREE.Group();
@@ -31,16 +33,18 @@ export function detailGarmentBay(group: THREE.Group): void {
 		group.add(box([0.022, 0.025, 0.3], materials.metal, [x * 0.9, 1.6, 0.15]));
 	}
 	for (let index = 0; index < 7; index++) {
-		const product = garment(index);
+		const placementId = `${group.name}/${index}`;
+		const product = garment(clothingAt(placementId));
+		product.userData["clothingPlacementId"] = placementId;
 		product.position.set(-0.47 + index * 0.155, 1.6125, 0.3);
 		product.rotation.y = Math.PI / 2.6;
 		group.add(product);
 	}
 	group.userData["merchandise"] = {
-		kind: "illustrative garments",
+		kind: "photographed paired clothing",
 		count: 7,
 		support: "suspended from Ø25 rail",
-		exactSku: false,
+		exactSku: true,
 	};
 }
 
@@ -127,7 +131,7 @@ export function detailPegboard(group: THREE.Group): void {
 			group.add(box([0.012, 0.1, 0.2], materials.metal, [x, y - 0.05, 0.105]));
 		for (let column = 0; column < 3; column++) {
 			const product = cap(row + column);
-			product.position.set(-0.75 + column * 0.27, y + 0.015, 0.15);
+			placeCapOnSupport(product, { x: -.75 + column * .27, top: y + .015, z: .14, depth: .248 });
 			group.add(product);
 		}
 	}

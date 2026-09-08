@@ -1,3 +1,5 @@
+import { sourcedClothesCatalog } from "./source-catalog";
+
 export type GarmentReference = {
 	readonly id: string;
 	readonly color: string;
@@ -5,10 +7,32 @@ export type GarmentReference = {
 	readonly frontImage?: string;
 	readonly rearImage?: string;
 	readonly maxBulge?: number;
+	readonly category?:
+		| "tee"
+		| "sweatshirt"
+		| "hoodie"
+		| "shirt"
+		| "jacket"
+		| "pants"
+		| "shorts"
+		| "skirt"
+		| "dress";
+	readonly analysis?: {
+		readonly width: number;
+		readonly height: number;
+		readonly top: number;
+		readonly scale: number;
+	};
+	readonly rearProjection?: {
+		readonly uScale: number;
+		readonly uOffset: number;
+		readonly vScale: number;
+		readonly vOffset: number;
+	};
 	readonly outline: readonly (readonly [number, number])[];
 };
 
-export const clothesCatalog: readonly GarmentReference[] = [
+const legacyClothesCatalog: readonly GarmentReference[] = [
 	{
 		id: "M26F3ATSM0764",
 		color: "#1c2025",
@@ -83,6 +107,7 @@ export const clothesCatalog: readonly GarmentReference[] = [
 		view: "front",
 		frontImage: "M26F3AMTV0164-front.png",
 		rearImage: "M26F3AMTV0164-rear.png",
+		category: "sweatshirt",
 		maxBulge: 0.028,
 		outline: [
 			[373, 241],
@@ -139,3 +164,19 @@ export const clothesCatalog: readonly GarmentReference[] = [
 		],
 	},
 ] as const;
+
+export const clothesCatalog: readonly GarmentReference[] = [
+	...legacyClothesCatalog.map(
+		(reference) =>
+			sourcedClothesCatalog.find((item) => item.id === reference.id) ??
+			reference,
+	),
+	...sourcedClothesCatalog.filter(
+		(reference) =>
+			!legacyClothesCatalog.some((item) => item.id === reference.id),
+	),
+];
+
+export const pairedClothesCatalog = clothesCatalog.filter(
+	(reference) => reference.frontImage && reference.rearImage,
+);

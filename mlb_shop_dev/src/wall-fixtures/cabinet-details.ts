@@ -2,6 +2,7 @@ import * as THREE from "three";
 import { box, materials } from "./primitives";
 import { cap, shoe } from "./merchandise";
 import { expandedPanel } from "./surfaces";
+import { placeCapOnSupport } from "../products/caps/placement";
 
 export function detailCapCabinet(
 	group: THREE.Group,
@@ -18,8 +19,8 @@ export function detailCapCabinet(
 	for (let level = 0; level < 6; level++) {
 		const y = 0.325 + level * 0.358;
 		for (let column = 0; column < 3; column++) {
-			const product = cap(index + level + column);
-			product.position.set(((column - 1) * width) / 3, y, 0.015);
+			const product = cap((index - 1) * 18 + level * 3 + column);
+			placeCapOnSupport(product, { x: ((column - 1) * width) / 3, top: y, z: .005, width: width / 3 - .025, depth: .35 });
 			group.add(product);
 		}
 		group.add(
@@ -30,9 +31,9 @@ export function detailCapCabinet(
 		box([width - 0.04, 0.015, 0.012], materials.dark, [0, 0.067, 0.187]),
 	);
 	group.userData["merchandise"] = {
-		kind: "illustrative cap proxies",
+		kind: "same-SKU photographic headwear assortment",
 		count: 18,
-		support: "six shelves × three columns; no exact SKU claim",
+		support: "six shelves × three columns; distinct admitted SKUs before repetition; inferred hidden construction",
 	};
 }
 

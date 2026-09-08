@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import { shoeProducts, type ShoeProduct } from "./catalog";
 import { cavityGeometry, collarGeometry, laceGeometry, shoeLoft } from "./geometry";
+import { createPhotoShoe } from "./photo-shoe";
 
 const prototypes = new Map<string, THREE.Group>();
 const loader = new THREE.TextureLoader();
@@ -67,7 +68,7 @@ export function createShoe(index: number): THREE.Group {
   const product = shoeProducts[((Math.trunc(index) % shoeProducts.length) + shoeProducts.length) % shoeProducts.length] ?? shoeProducts[0];
   let prototype = prototypes.get(product.sku);
   if (!prototype) {
-    prototype = buildShoe(product);
+    prototype = product.sku === "M26N3ACVSP46N" ? createPhotoShoe(product) : buildShoe(product);
     prototypes.set(product.sku, prototype);
   }
   return prototype.clone(true);

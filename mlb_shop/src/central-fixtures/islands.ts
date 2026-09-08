@@ -37,7 +37,7 @@ export function createIslands(): THREE.Group[] {
         group.add(beam([x + side, 1.63, .6], [x + side, 1.63, .94]));
         group.add(beam([x + side, 1.86, .6], [x + side, 1.63, .94]));
       }
-      const clothing = garments(8, 1.03);
+      const clothing = garments(8, 1.03, `hg-${row.id}-${i}`);
       clothing.position.set(x, 1.63, .94);
       group.add(clothing);
     }
@@ -65,7 +65,7 @@ export function createIslands(): THREE.Group[] {
   top.scale.set(.985, .2, .985);
   top.position.y = .79;
   e.add(top);
-  const products = foldedProducts();
+  const products = foldedProducts('hg-e');
   products.position.y = .801;
   e.add(products);
   for (const x of [-0.35, 0.85]) for (const z of [-0.73, 0.73]) e.add(box([0.025, 2.005, 0.025], [x, 1.8025, z], materials.blue));
@@ -80,7 +80,7 @@ export function createIslands(): THREE.Group[] {
     for (const x of [-1.65, -0.55, 0.55, 1.65]) f.add(box([0.02, 1.38, 0.04], [x, 2.41, z], materials.blue));
   }
   f.position.set(11.12, 0, 8);
-  for (const z of [-.275, .275]) { const clothing = garments(20, 3.1); clothing.position.set(0, 1.71, z); f.add(clothing); }
+  for (const [index, z] of [-.275, .275].entries()) { const clothing = garments(20, 3.1, `hg-f-${index}`); clothing.position.set(0, 1.71, z); f.add(clothing); }
   islands.push(f);
   return islands;
 }

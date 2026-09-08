@@ -3,6 +3,7 @@ import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.j
 import { beam, box, fixture, materials } from './parts';
 import { foldedProducts } from './merchandise';
 import { perforatedPanel } from './surfaces';
+import { CapPlacementError, placeCapOnSupport } from '../products/caps/placement';
 
 export function createFurniture(): THREE.Group[] {
   const result: THREE.Group[] = [];
@@ -31,7 +32,17 @@ export function createFurniture(): THREE.Group[] {
   for (const z of [-.297, .297]) showcase.add(box([2.75, .23, .005], [0, .785, z], materials.glass));
   for (const x of [-1.372, -.455, .455, 1.372]) showcase.add(box([.005, .23, .6], [x, .785, 0], materials.glass));
   showcase.add(box([2.7, .009, .012], [0, .88, -.28], materials.led));
-  const display = foldedProducts(); display.scale.set(2, .7, .55); display.position.y = .695; showcase.add(display);
+  const display = foldedProducts('showcase'); display.scale.set(2, .7, .55); display.position.y = .695; showcase.add(display);
+  const caps = display.children.filter((object): object is THREE.Group => object instanceof THREE.Group && object.name.startsWith('reference-cap-'));
+  display.updateMatrixWorld(true);
+  const folded = display.children.filter(object => object.name.startsWith('reference-folded-'));
+  for (const [index, cap] of caps.entries()) {
+    display.remove(cap);
+    const support = folded[index];
+    if (!support) throw new CapPlacementError('missing-folded-support');
+    placeCapOnSupport(cap, { x: index % 2 === 0 ? -.65 : .65, top: new THREE.Box3().setFromObject(support).max.y, z: index < 2 ? -.146 : .146, depth: .285 });
+    showcase.add(cap);
+  }
   showcase.position.set(6.2, 0, 13.05); result.push(showcase);
   for (const [i, z, direction] of [[1, 12.26, 1], [2, 15.47, -1]] as const) {
     const g = fixture(`fitting-accessories-${i}`, `피팅룸 ${i} 거울·선반`, 'fitting');

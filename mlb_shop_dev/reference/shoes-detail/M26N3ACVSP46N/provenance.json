@@ -1,0 +1,61 @@
+{
+  "category": "shoes",
+  "sku": "M26N3ACVSP46N",
+  "page": "https://www.mlb-korea.com/product-detail/3ACVSP46N-07CRS",
+  "assets": [
+    {
+      "path": "reference/shoes-detail/M26N3ACVSP46N/gallery-0.png",
+      "url": "https://static-resource.mlb-korea.com/images/goods/ec/M26N3ACVSP46N07CRS/thnail/EFDC6DFDA2504496B4A8D2E8A13B97F5.png",
+      "bytes": 1387864,
+      "sha256": "de3a885255c0f965003d62ed454d1fde45aea6b94bbe1c3b99fa20e7cd0ab424"
+    },
+    {
+      "path": "reference/shoes-detail/M26N3ACVSP46N/gallery-1.png",
+      "url": "https://static-resource.mlb-korea.com/images/goods/ec/M26N3ACVSP46N07CRS/thnail/0FB6C54CCA554F41AD5099DB8A1D9D1F.png",
+      "bytes": 1469751,
+      "sha256": "640e865d7db0bfd93eb3c4ba512b9e55fd2e8bbf716721abf6f652661b504760"
+    },
+    {
+      "path": "reference/shoes-detail/M26N3ACVSP46N/gallery-2.jpg",
+      "url": "https://static-resource.mlb-korea.com/images/goods/ec/M26N3ACVSP46N07CRS/F90D814E0A54463AADD731BED79FFC1F.jpg",
+      "bytes": 124573,
+      "sha256": "478706718650590df424c7e51f2532fef7a4551e26300ef623edf2262edaf9cb"
+    },
+    {
+      "path": "reference/shoes-detail/M26N3ACVSP46N/gallery-3.jpg",
+      "url": "https://static-resource.mlb-korea.com/images/goods/ec/M26N3ACVSP46N07CRS/25B855220E1B47EDA6009CCE4BF4FFAC.jpg",
+      "bytes": 230314,
+      "sha256": "4c2ccb3af21a2fb394ef3be2fc21631fc64982eb17e8213e20c73ad75b4f57e7"
+    },
+    {
+      "path": "reference/shoes-detail/M26N3ACVSP46N/gallery-4.jpg",
+      "url": "https://static-resource.mlb-korea.com/images/goods/ec/M26N3ACVSP46N07CRS/713B08379D4E4ECAB3B44F8BE048C219.jpg",
+      "bytes": 134184,
+      "sha256": "2f44d193447bb0e38a22b1bd91f6d16bd41e2fb1550f27b5472472d8df114a33"
+    },
+    {
+      "path": "reference/shoes-detail/M26N3ACVSP46N/gallery-5.jpg",
+      "url": "https://static-resource.mlb-korea.com/images/goods/ec/M26N3ACVSP46N07CRS/AF0A4F71848D49F7BFDB72B5CA99D94D.jpg",
+      "bytes": 105763,
+      "sha256": "fbe584782cb663c6bdb2c068d3e7e7ada29414746c6405c3fba490610f688511"
+    },
+    {
+      "path": "reference/shoes-detail/M26N3ACVSP46N/gallery-6.jpg",
+      "url": "https://static-resource.mlb-korea.com/images/goods/ec/M26N3ACVSP46N07CRS/700E90E52F7147CABE97D4F840454EBD.jpg",
+      "bytes": 202438,
+      "sha256": "4e0c3d7d8902512c86c1eedd0598c919f418509a264962dedd0683b67638a492"
+    },
+    {
+      "path": "reference/shoes-detail/M26N3ACVSP46N/gallery-7.jpg",
+      "url": "https://static-resource.mlb-korea.com/images/goods/ec/M26N3ACVSP46N07CRS/9B354B9417554F098E01711E6B4D8E5C.jpg",
+      "bytes": 519685,
+      "sha256": "bc507d2386de46478bfadfd0a1268e97661dbac530df7c8000f593059e937ea4"
+    },
+    {
+      "path": "reference/shoes-detail/M26N3ACVSP46N/gallery-8.jpg",
+      "url": "https://static-resource.mlb-korea.com/images/goods/ec/M26N3ACVSP46N07CRS/A5E5C2398C0349BE93580CA6E0862B71.jpg",
+      "bytes": 301182,
+      "sha256": "c5463d65b39123de8bcb7162cec5fa7ab2d1141efb5dd38bd9e8299278828ed2"
+    }
+  ]
+}
