@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import { box, materials } from "./primitives";
 
-export { createCap as cap } from "../products/caps";
+export { createHeadwear as cap } from "../products/caps/assortment";
 export { createGarment as garment } from "../products/clothes";
 export { createShoe as shoe } from "../products/shoes";
 

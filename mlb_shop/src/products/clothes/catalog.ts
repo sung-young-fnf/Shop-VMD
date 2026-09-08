@@ -1,11 +1,38 @@
+import { sourcedClothesCatalog } from "./source-catalog";
+
 export type GarmentReference = {
 	readonly id: string;
 	readonly color: string;
 	readonly view: "front" | "rear";
+	readonly frontImage?: string;
+	readonly rearImage?: string;
+	readonly maxBulge?: number;
+	readonly category?:
+		| "tee"
+		| "sweatshirt"
+		| "hoodie"
+		| "shirt"
+		| "jacket"
+		| "pants"
+		| "shorts"
+		| "skirt"
+		| "dress";
+	readonly analysis?: {
+		readonly width: number;
+		readonly height: number;
+		readonly top: number;
+		readonly scale: number;
+	};
+	readonly rearProjection?: {
+		readonly uScale: number;
+		readonly uOffset: number;
+		readonly vScale: number;
+		readonly vOffset: number;
+	};
 	readonly outline: readonly (readonly [number, number])[];
 };
 
-export const clothesCatalog: readonly GarmentReference[] = [
+const legacyClothesCatalog: readonly GarmentReference[] = [
 	{
 		id: "M26F3ATSM0764",
 		color: "#1c2025",
@@ -76,27 +103,80 @@ export const clothesCatalog: readonly GarmentReference[] = [
 	},
 	{
 		id: "M26F3AMTV0164",
-		color: "#243e5d",
+		color: "#20364f",
 		view: "front",
+		frontImage: "M26F3AMTV0164-front.png",
+		rearImage: "M26F3AMTV0164-rear.png",
+		category: "sweatshirt",
+		maxBulge: 0.028,
 		outline: [
-			[370, 247],
-			[414, 258],
-			[467, 258],
-			[520, 246],
-			[633, 284],
-			[667, 320],
-			[808, 933],
-			[728, 965],
-			[683, 886],
-			[655, 801],
-			[652, 925],
-			[254, 925],
-			[239, 817],
-			[192, 928],
-			[162, 965],
-			[92, 936],
-			[207, 343],
-			[248, 303],
+			[373, 241],
+			[409, 256],
+			[439, 261],
+			[481, 257],
+			[516, 242],
+			[529, 253],
+			[579, 266],
+			[615, 281],
+			[638, 293],
+			[653, 306],
+			[678, 359],
+			[722, 486],
+			[794, 761],
+			[808, 850],
+			[809, 878],
+			[805, 886],
+			[805, 906],
+			[810, 938],
+			[734, 959],
+			[717, 917],
+			[705, 907],
+			[686, 875],
+			[663, 819],
+			[660, 821],
+			[658, 861],
+			[650, 880],
+			[640, 926],
+			[526, 925],
+			[396, 923],
+			[258, 926],
+			[253, 922],
+			[245, 880],
+			[236, 862],
+			[235, 823],
+			[232, 821],
+			[215, 867],
+			[193, 907],
+			[176, 927],
+			[163, 959],
+			[110, 945],
+			[85, 935],
+			[92, 895],
+			[88, 876],
+			[90, 853],
+			[105, 774],
+			[180, 475],
+			[208, 375],
+			[233, 322],
+			[250, 299],
+			[296, 276],
+			[357, 256],
 		],
 	},
 ] as const;
+
+export const clothesCatalog: readonly GarmentReference[] = [
+	...legacyClothesCatalog.map(
+		(reference) =>
+			sourcedClothesCatalog.find((item) => item.id === reference.id) ??
+			reference,
+	),
+	...sourcedClothesCatalog.filter(
+		(reference) =>
+			!legacyClothesCatalog.some((item) => item.id === reference.id),
+	),
+];
+
+export const pairedClothesCatalog = clothesCatalog.filter(
+	(reference) => reference.frontImage && reference.rearImage,
+);

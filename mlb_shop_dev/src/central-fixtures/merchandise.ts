@@ -1,12 +1,16 @@
 import * as THREE from "three";
-import { createCap } from "../products/caps";
+import { createHeadwear as createCap } from "../products/caps/assortment";
 import { createFoldedGarment, createGarment } from "../products/clothes";
+import { clothingAt } from "../clothing-placement";
+import { placeCapOnSupport } from "../products/caps/placement";
 
-export function garments(count: number, length: number): THREE.Group {
+export function garments(count: number, length: number, bay: string): THREE.Group {
 	const group = new THREE.Group();
 	group.userData["referenceMerchandise"] = true;
 	for (let index = 0; index < count; index++) {
-		const garment = createGarment(index);
+		const placementId = `${bay}/${index}`;
+		const garment = createGarment(clothingAt(placementId));
+		garment.userData["clothingPlacementId"] = placementId;
 		garment.rotation.y = Math.PI / 2;
 		garment.position.x = (index / Math.max(1, count - 1) - 0.5) * length;
 		group.add(garment);
@@ -14,7 +18,7 @@ export function garments(count: number, length: number): THREE.Group {
 	return group;
 }
 
-export function foldedProducts(): THREE.Group {
+export function foldedProducts(bay: string): THREE.Group {
 	const group = new THREE.Group();
 	group.userData["referenceMerchandise"] = true;
 	for (const [index, x, z] of [
@@ -23,10 +27,12 @@ export function foldedProducts(): THREE.Group {
 		[2, -0.27, 0.3],
 		[3, 0.27, 0.3],
 	] as const) {
-		const folded = createFoldedGarment(index);
+		const placementId = `${bay}/${index}`;
+		const folded = createFoldedGarment(clothingAt(placementId));
+		folded.userData["clothingPlacementId"] = placementId;
 		folded.position.set(x, 0, z);
 		const cap = createCap(index);
-		cap.position.set(x, 0.045, z);
+		placeCapOnSupport(cap, { x, top: new THREE.Box3().setFromObject(folded).max.y, z });
 		group.add(folded, cap);
 	}
 	return group;

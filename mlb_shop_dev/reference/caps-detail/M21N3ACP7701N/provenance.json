@@ -1,0 +1,61 @@
+{
+  "category": "caps",
+  "sku": "M21N3ACP7701N",
+  "page": "https://www.mlb-korea.com/product-detail/3ACP7701N-50NYS",
+  "assets": [
+    {
+      "path": "reference/caps-detail/M21N3ACP7701N/gallery-0.png",
+      "url": "https://static-resource.mlb-korea.com/images/goods/ec/M21N3ACP7701N50NYS/thnail/FE81C6D534C14291897B8019792F7FF9.png",
+      "bytes": 1969679,
+      "sha256": "108e8c65f059c39c6f9044c37f7862928c223ce9a1139afa9b4f9d597d5d9a73"
+    },
+    {
+      "path": "reference/caps-detail/M21N3ACP7701N/gallery-1.jpg",
+      "url": "https://static-resource.mlb-korea.com/images/goods/ec/M21N3ACP7701N50NYS/thnail/0EC39EBD623344E3BA725A771487D607.jpg",
+      "bytes": 529491,
+      "sha256": "d467b2c7b34200abe36925567ac3e85520c966a762e832e8a3477960fd39e633"
+    },
+    {
+      "path": "reference/caps-detail/M21N3ACP7701N/gallery-2.jpg",
+      "url": "https://static-resource.mlb-korea.com/images/goods/ec/M21N3ACP7701N50NYS/thnail/9F3F23145C8543C2A0B1C3BF3DCA988B.jpg",
+      "bytes": 509949,
+      "sha256": "4aea07aa3d76b316ab8cc9217a9439b1adefe6a35b84749151ed0a7c77a9ac1f"
+    },
+    {
+      "path": "reference/caps-detail/M21N3ACP7701N/gallery-3.jpg",
+      "url": "https://static-resource.mlb-korea.com/images/goods/ec/M21N3ACP7701N50NYS/thnail/79AED899CA494782B3591C028B5BBC99.jpg",
+      "bytes": 1843389,
+      "sha256": "da985c0f0bc0fe39852667ec4d6f7f19916b13ab678ef84830e79b3dbe12a4b1"
+    },
+    {
+      "path": "reference/caps-detail/M21N3ACP7701N/gallery-4.png",
+      "url": "https://static-resource.mlb-korea.com/images/goods/ec/M21N3ACP7701N50NYS/thnail/B6523C3288614D40952402F6DB910C21.png",
+      "bytes": 1591271,
+      "sha256": "755050ddb48993eaa556a72675d14c4c56188269dfaa87ae0e345125cdcae057"
+    },
+    {
+      "path": "reference/caps-detail/M21N3ACP7701N/gallery-5.jpg",
+      "url": "https://static-resource.mlb-korea.com/images/goods/ec/M21N3ACP7701N50NYS/05AE12DFD3A84E28BC886027808E83AE.jpg",
+      "bytes": 923707,
+      "sha256": "8629e2fa84d3bfa732f4b0d90fb2a9446898d87fa717a666038d3a7eb080da71"
+    },
+    {
+      "path": "reference/caps-detail/M21N3ACP7701N/gallery-6.jpg",
+      "url": "https://static-resource.mlb-korea.com/images/goods/ec/M21N3ACP7701N50NYS/C2804124069046599BA23CE59FA9B6FC.jpg",
+      "bytes": 142419,
+      "sha256": "5c42ad05afa828abd64c82a0757e2c52fd88428d9c09604706eb118b73469c02"
+    },
+    {
+      "path": "reference/caps-detail/M21N3ACP7701N/gallery-7.jpg",
+      "url": "https://static-resource.mlb-korea.com/images/goods/ec/M21N3ACP7701N50NYS/6AD05D6A403A41319D759F26DBF60FBE.jpg",
+      "bytes": 4275585,
+      "sha256": "cd822576e9a8b687590a1c0dcc48eacdc71bf043844933ebb1bea37fc9f412b9"
+    },
+    {
+      "path": "reference/caps-detail/M21N3ACP7701N/gallery-8.jpg",
+      "url": "https://static-resource.mlb-korea.com/images/goods/ec/M21N3ACP7701N50NYS/1A0DE5A95EC044EBBA24755F8E3EDB1E.jpg",
+      "bytes": 2735037,
+      "sha256": "7832dd5562cf0a66ac8f0a1ca83c05f0dd63b8a2f843698fa53c089badaad7b6"
+    }
+  ]
+}

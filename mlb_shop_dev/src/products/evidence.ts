@@ -1,9 +1,16 @@
 import * as THREE from "three";
+import { clothingEvidence } from "../clothing-evidence";
+import { pairedClothesCatalog } from "./clothes/catalog";
 
 export function productEvidence(model: THREE.Object3D) {
-	const materials = new Set<THREE.MeshStandardMaterial>();
+	const materials = new Set<
+		THREE.MeshStandardMaterial | THREE.MeshBasicMaterial
+	>();
 	const instances: string[] = [];
+	const clothing: NonNullable<ReturnType<typeof clothingEvidence>>[] = [];
 	model.traverse((object) => {
+		const placement = clothingEvidence(object);
+		if (placement) clothing.push(placement);
 		const id: unknown = object.userData["productId"];
 		if (typeof id === "string") instances.push(id);
 		const batched: unknown = object.userData["batchedProductIds"];
@@ -15,12 +22,21 @@ export function productEvidence(model: THREE.Object3D) {
 			? object.material
 			: [object.material])
 			if (
-				material instanceof THREE.MeshStandardMaterial &&
+				(material instanceof THREE.MeshStandardMaterial ||
+					material instanceof THREE.MeshBasicMaterial) &&
 				material.userData["referenceProduct"] === true
 			)
 				materials.add(material);
 	});
 	return {
+		clothing,
+		clothingSummary: {
+			placements: clothing.length,
+			distinctSkus: new Set(clothing.map((item) => item.productId)).size,
+			repeatedPlacements: clothing.length - new Set(clothing.map((item) => item.productId)).size,
+			verifiedPoolCount: pairedClothesCatalog.length,
+			pairedPlacements: clothing.filter((item) => item.frontReady && item.rearReady).length,
+		},
 		instances: instances.length,
 		productIds: [...new Set(instances)],
 		materials: [...materials].map((material) => {

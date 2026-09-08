@@ -1,12 +1,16 @@
 import * as THREE from 'three';
+import { createPhotoCap } from './photo-cap';
+import { cadBillGeometry, cadBillRim, cadCrownGeometry, cadStrapGeometry } from './cad-geometry';
+import { addCadConstruction } from './cad-details';
+import { addBostonPhotoDetails, addPinkDistress } from './cad-photo-details';
 
 const products = [
-  { id: 'M21N3ACP7701N', color: '#1e2c46', width: .043, height: .049 },
-  { id: 'M22N3ACP0802N', color: '#1e2127', width: .058, height: .066 },
-  { id: 'M24N3ACPVL64N', color: '#e0a4a9', width: .075, height: .049 },
-  { id: 'M25N3ACP8805N', color: '#2f3b5d', width: .039, height: .060 },
-  { id: 'M26N3ACPB296N', color: '#870215', width: .049, height: .062 },
-  { id: 'M26N3ACPB336N', color: '#cabdaa', width: .050, height: .064 },
+  { id: 'M21N3ACP7701N', color: '#1e2c46', width: .043, height: .049, visorDrop: .052, stitchRows: 4 },
+  { id: 'M22N3ACP0802N', color: '#1e2127', width: .058, height: .066, visorDrop: .052, stitchRows: 6 },
+  { id: 'M24N3ACPVL64N', color: '#e0a4a9', width: .075, height: .049, visorDrop: .052, stitchRows: 4 },
+  { id: 'M25N3ACP8805N', color: '#2f3b5d', width: .039, height: .060, visorDrop: .044, stitchRows: 5 },
+  { id: 'M26N3ACPB296N', color: '#870215', width: .049, height: .062, visorDrop: .008, stitchRows: 6 },
+  { id: 'M26N3ACPB336N', color: '#cabdaa', width: .050, height: .064, visorDrop: .052, stitchRows: 5 },
 ] as const;
 const cache = new Map<number, THREE.Group>();
 const loader = new THREE.TextureLoader();
@@ -26,36 +30,42 @@ export function createCap(index: number): THREE.Group {
   const slot = ((Math.trunc(index) % products.length) + products.length) % products.length;
   const cached = cache.get(slot);
   if (cached) return cached.clone(true);
+  if (slot === 0) {
+    const photo = createPhotoCap();
+    cache.set(slot, photo);
+    return photo.clone(true);
+  }
   const product = products[slot] ?? products[0];
   const group = new THREE.Group();
   group.name = `reference-cap-${product.id}`;
   group.userData['productId'] = product.id;
   group.userData['source'] = `reference/caps/${product.id}.png`;
-  group.userData['hiddenGeometry'] = 'inferred rear, underside and closure';
+  group.userData['cadSource'] = `reference/caps/${product.id}.jpg`;
+  group.userData['hiddenGeometry'] = 'CAD-guided construction; dimensions, hidden texture and unshown closure details inferred';
   const cloth = fabric(product.color);
-  const crown = new THREE.Mesh(new THREE.SphereGeometry(1, 24, 14, 0, Math.PI * 2, 0, Math.PI / 2), cloth);
-  crown.scale.set(.102, .116, .097);
-  crown.position.y = .018;
+  const crown = new THREE.Mesh(cadCrownGeometry(), cloth);
   crown.name = 'crown';
   group.add(crown);
 
-  const bill = new THREE.Shape();
-  bill.moveTo(-.088, .020);
-  bill.bezierCurveTo(-.115, .080, -.112, .154, 0, .168);
-  bill.bezierCurveTo(.112, .154, .115, .080, .088, .020);
-  bill.quadraticCurveTo(0, .060, -.088, .020);
-  const brimGeometry = new THREE.ExtrudeGeometry(bill, { depth: .003, bevelEnabled: false, curveSegments: 18 });
-  const positions = brimGeometry.getAttribute('position');
-  for (let vertex = 0; vertex < positions.count; vertex++) {
-    const x = positions.getX(vertex);
-    const forward = positions.getY(vertex);
-    const thickness = positions.getZ(vertex);
-    positions.setXYZ(vertex, -x, .010 + .012 * (x / .112) ** 2 + thickness, forward);
-  }
-  brimGeometry.computeVertexNormals();
+  const brimGeometry = cadBillGeometry(product.visorDrop);
   const brim = new THREE.Mesh(brimGeometry, cloth);
   brim.name = 'curved-bill';
   group.add(brim);
+  const underside = new THREE.Mesh(brimGeometry.clone().translate(0, -.0022, 0), cloth);
+  const undersideIndex = underside.geometry.index;
+  if (undersideIndex) {
+    for (let index = 0; index < undersideIndex.count; index += 3) {
+      const second = undersideIndex.getX(index + 1);
+      undersideIndex.setX(index + 1, undersideIndex.getX(index + 2));
+      undersideIndex.setX(index + 2, second);
+    }
+    underside.geometry.computeVertexNormals();
+  }
+  underside.name = 'cad-bill-underside';
+  group.add(underside);
+  const rim = new THREE.Mesh(cadBillRim(product.visorDrop), cloth);
+  rim.name = 'cad-bill-edge';
+  group.add(rim);
 
   const patchGeometry = new THREE.PlaneGeometry(product.width, product.height, 14, 14);
   const patchPositions = patchGeometry.getAttribute('position');
@@ -78,27 +88,33 @@ export function createCap(index: number): THREE.Group {
   patch.name = 'source-embroidery-crown-projection';
   group.add(patch);
 
-  const seamMaterial = fabric(new THREE.Color(product.color).multiplyScalar(.83));
-  for (let panel = 0; panel < 6; panel++) {
-    const angle = panel * Math.PI / 3;
-    const points = Array.from({ length: 14 }, (_, step) => {
-      const theta = .05 + (step / 13) * 1.50;
-      return new THREE.Vector3(.1024 * Math.sin(theta) * Math.sin(angle), .018 + .1164 * Math.cos(theta), .0974 * Math.sin(theta) * Math.cos(angle));
-    });
-    const seam = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(points), 13, .00045, 3, false), seamMaterial);
-    seam.name = `panel-seam-${panel}`;
-    group.add(seam);
-  }
+  addCadConstruction(group, product);
+  if (product.id === 'M26N3ACPB296N') addBostonPhotoDetails(group);
+  if (product.id === 'M24N3ACPVL64N') addPinkDistress(group);
   const button = new THREE.Mesh(new THREE.SphereGeometry(.007, 10, 6), cloth);
   button.scale.y = .42;
   button.position.y = .134;
   button.name = 'crown-button';
   group.add(button);
-  const band = new THREE.Mesh(new THREE.CylinderGeometry(.096, .096, .008, 24, 1, true), seamMaterial);
-  band.scale.z = .94;
-  band.position.y = .014;
-  band.name = 'inferred-sweatband';
-  group.add(band);
+  const strapMaterial = cloth.clone();
+  strapMaterial.side = THREE.DoubleSide;
+  const strap = new THREE.Mesh(cadStrapGeometry(), strapMaterial);
+  strap.name = 'cad-adjustment-strap';
+  group.add(strap);
+  if (slot <= 3) {
+    const buckleShape = new THREE.Shape();
+    buckleShape.moveTo(-.005, -.007); buckleShape.lineTo(.005, -.007);
+    buckleShape.lineTo(.005, .007); buckleShape.lineTo(-.005, .007); buckleShape.closePath();
+    const hole = new THREE.Path();
+    hole.moveTo(-.0034, -.0053); hole.lineTo(-.0034, .0053);
+    hole.lineTo(.0034, .0053); hole.lineTo(.0034, -.0053); hole.closePath();
+    buckleShape.holes.push(hole);
+    const buckle = new THREE.Mesh(new THREE.ExtrudeGeometry(buckleShape, { depth: .0012, bevelEnabled: false }), new THREE.MeshStandardMaterial({ color: '#85878a', metalness: .75, roughness: .38 }));
+    buckle.position.set(.034, .025, -.0923);
+    buckle.rotation.y = Math.PI - .34;
+    buckle.name = 'cad-metal-rear-adjuster';
+    group.add(buckle);
+  }
   for (const part of group.children) part.position.y -= .010;
   group.traverse(object => {
     if (object instanceof THREE.Mesh) {

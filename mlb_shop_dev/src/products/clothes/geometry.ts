@@ -2,12 +2,37 @@ import * as THREE from "three";
 import { mergeVertices } from "three/addons/utils/BufferGeometryUtils.js";
 import type { GarmentReference } from "./catalog";
 
-const imageWidth = 899;
-const imageHeight = 1200;
-const scale = 0.00084;
-const sourceTop = 240;
+export function rearGarmentGeometry(
+	front: THREE.BufferGeometry,
+	projection?: GarmentReference["rearProjection"],
+) {
+	const rear = front.clone().scale(1, 1, -1);
+	const uv = rear.getAttribute("uv");
+	for (let index = 0; index < uv.count; index++) {
+		uv.setXY(
+			index,
+			(1 - uv.getX(index)) * (projection?.uScale ?? 1) +
+				(projection?.uOffset ?? 0),
+			uv.getY(index) * (projection?.vScale ?? 1) + (projection?.vOffset ?? 0),
+		);
+	}
+	const indices: number[] = [];
+	const count = front.index?.count ?? front.getAttribute("position").count;
+	for (let index = 0; index < count; index += 3)
+		indices.push(
+			front.index?.getX(index) ?? index,
+			front.index?.getX(index + 2) ?? index + 2,
+			front.index?.getX(index + 1) ?? index + 1,
+		);
+	rear.setIndex(indices);
+	return rear;
+}
 
 export function garmentGeometry(reference: GarmentReference) {
+	const imageWidth = reference.analysis?.width ?? 899;
+	const imageHeight = reference.analysis?.height ?? 1200;
+	const scale = reference.analysis?.scale ?? 0.00084;
+	const sourceTop = reference.analysis?.top ?? 240;
 	const points = reference.outline.map(
 		([x, y]) =>
 			new THREE.Vector2(
@@ -17,14 +42,25 @@ export function garmentGeometry(reference: GarmentReference) {
 	);
 	const shape = new THREE.Shape(points);
 	const shell = new THREE.ExtrudeGeometry(shape, {
-		depth: 0.022,
-		bevelEnabled: true,
+		depth: reference.rearImage ? 0.025 : 0.022,
+		bevelEnabled: !reference.rearImage,
 		bevelSegments: 2,
 		bevelSize: 0.0015,
 		bevelThickness: 0.0015,
 		steps: 1,
 	});
-	shell.translate(0, 0, -0.012);
+	shell.translate(0, 0, reference.rearImage ? -0.0125 : -0.012);
+	if (reference.rearImage) {
+		const undercoat = shell.groups.find((group) => group.materialIndex === 0);
+		const positions = shell.getAttribute("position");
+		if (undercoat)
+			for (
+				let index = undercoat.start;
+				index < undercoat.start + undercoat.count;
+				index++
+			)
+				positions.setZ(index, 0);
+	}
 	const initial = new THREE.ShapeGeometry(shape).toNonIndexed();
 	const vertices: number[] = [];
 	const uvs: number[] = [];
@@ -34,6 +70,16 @@ export function garmentGeometry(reference: GarmentReference) {
 	): void => {
 		const [a, b, c] = triangle;
 		if (!a || !b || !c) return;
+		const signedArea =
+			(Math.fround(b.x) - Math.fround(a.x)) *
+				(Math.fround(c.y) - Math.fround(a.y)) -
+			(Math.fround(b.y) - Math.fround(a.y)) *
+				(Math.fround(c.x) - Math.fround(a.x));
+		if (Math.abs(signedArea) < 1e-12) return;
+		if (signedArea < 0) {
+			addTriangle([a, c, b], depth);
+			return;
+		}
 		if (depth > 0) {
 			const ab = a.clone().add(b).multiplyScalar(0.5);
 			const bc = b.clone().add(c).multiplyScalar(0.5);
@@ -90,7 +136,10 @@ export function garmentGeometry(reference: GarmentReference) {
 	const face = new THREE.BufferGeometry();
 	face.setAttribute("position", new THREE.Float32BufferAttribute(vertices, 3));
 	face.setAttribute("uv", new THREE.Float32BufferAttribute(uvs, 2));
-	const smoothFace = mergeVertices(face, 0.000001);
+	const smoothFace = mergeVertices(
+		face,
+		reference.analysis ? 0.00000001 : 0.000001,
+	);
 	face.dispose();
 	smoothFace.computeVertexNormals();
 	return { shell, face: smoothFace };

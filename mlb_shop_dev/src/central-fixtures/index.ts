@@ -13,7 +13,10 @@ export function createCentralFixtures(): THREE.Group {
     mergeFixture(fixture);
     const center = new THREE.Box3().setFromObject(fixture).getCenter(new THREE.Vector3());
     fixture.worldToLocal(center);
-    for (const child of fixture.children) if (child instanceof THREE.Mesh) child.geometry.translate(-center.x, -center.y, -center.z);
+    for (const child of fixture.children) {
+      if (child instanceof THREE.Mesh) child.geometry.translate(-center.x, -center.y, -center.z);
+      else child.position.sub(center);
+    }
     fixture.position.add(center.multiply(fixture.scale).applyQuaternion(fixture.quaternion));
     root.add(fixture);
   }

@@ -1,0 +1,1 @@
+- [x] [Shop VMD] Git 레포 초기 업로드 및 .gitignore 구성 (2026-09-08)

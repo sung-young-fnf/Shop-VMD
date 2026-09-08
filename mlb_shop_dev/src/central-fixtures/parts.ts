@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
+import { detachClothing } from '../clothing-placement';
 
 export const materials = {
   metal: new THREE.MeshStandardMaterial({ color: '#666b6e', metalness: 0.65, roughness: 0.48 }),
@@ -57,6 +58,7 @@ export function slab(points: readonly (readonly [number, number])[], height: num
   return new THREE.Mesh(geo, material);
 }
 export function mergeFixture(group: THREE.Group): void {
+  const clothing = detachClothing(group);
   const batches = new Map<THREE.Material, THREE.BufferGeometry[]>();
   group.updateMatrixWorld(true);
   const inverse = group.matrixWorld.clone().invert();
@@ -68,6 +70,7 @@ export function mergeFixture(group: THREE.Group): void {
     batches.set(child.material, entries);
   });
   group.clear();
+  for (const product of clothing) group.add(product);
   for (const [material, geometries] of batches) {
     const geometry = mergeGeometries(geometries, false);
     if (geometry) { const mesh = new THREE.Mesh(geometry, material); mesh.castShadow = true; mesh.receiveShadow = true; group.add(mesh); }

@@ -1,13 +1,14 @@
 import { awaitProductTextures } from '../src/products/loading.ts';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { createCap } from '../src/products/caps/index.ts';
+import { createHeadwear as createCap } from '../src/products/caps/assortment.ts';
+import { headwearCatalog } from '../src/products/caps/assortment-catalog.ts';
 import { createShoe } from '../src/products/shoes/index.ts';
 import { createGarment } from '../src/products/clothes/index.ts';
 
 const params = new URLSearchParams(location.search);
 const category = params.get('category') ?? 'caps';
-const index = Number(params.get('index') ?? 0);
+const index = params.has('sku') ? headwearCatalog.findIndex(item => item.id === params.get('sku')) : Number(params.get('index') ?? 0);
 const factories = { caps: createCap, shoes: createShoe, clothes: createGarment };
 if (!Object.hasOwn(factories, category)) throw new Error(`Unknown category ${category}`);
 const product = factories[category](index);
@@ -31,16 +32,18 @@ const center = bounds.getCenter(new THREE.Vector3());
 const size = bounds.getSize(new THREE.Vector3());
 const camera = new THREE.PerspectiveCamera(32, innerWidth / innerHeight, .001, 100);
 const distance = Math.max(size.x / camera.aspect, size.y, size.z) / (2 * Math.tan(THREE.MathUtils.degToRad(16))) * 1.35;
-const directions = { offaxis: [.9, .4, 1], rear: [0, .08, -1], rearOblique: [-.9, .4, -1], right: [1, .08, 0] };
-const direction = new THREE.Vector3(...(directions[params.get('angle')] ?? [0, category === 'caps' ? .45 : .08, 1]));
+const directions = { offaxis: [.9, .4, 1], rear: [0, .08, -1], rearOblique: [-.9, .4, -1], right: [1, .08, 0], left: [-1, .08, 0], top: [0, 1, .001], underside: [0, -1, .001] };
+const frontElevation = category === 'caps' ? (index === 0 ? Math.tan(.14) : .08) : .08;
+const direction = new THREE.Vector3(...(directions[params.get('angle')] ?? [0, frontElevation, 1]));
 camera.position.copy(center).addScaledVector(direction.normalize(), distance);
 camera.lookAt(center);
 await awaitProductTextures();
 const meshes = [];
 product.traverse(object => {
   if (!object.isMesh) return;
+  const geometryBounds = new THREE.Box3().setFromBufferAttribute(object.geometry.getAttribute('position'));
   const materials = Array.isArray(object.material) ? object.material : [object.material];
-  meshes.push({ name: object.name, vertices: object.geometry.getAttribute('position')?.count, materials: materials.map(material => ({ userData: material.userData, color: material.color?.getHexString(), map: material.map ? { url: material.map.image?.currentSrc ?? material.map.image?.src, width: material.map.image?.width, height: material.map.image?.height, version: material.map.version } : null })) });
+  meshes.push({ name: object.name, xyBounds: [geometryBounds.min.x, geometryBounds.min.y, geometryBounds.max.x, geometryBounds.max.y], vertices: object.geometry.getAttribute('position')?.count, materials: materials.map(material => ({ userData: material.userData, alphaTest: material.alphaTest, color: material.color?.getHexString(), map: material.map ? { url: material.map.image?.currentSrc ?? material.map.image?.src, width: material.map.image?.width, height: material.map.image?.height, version: material.map.version } : null })) });
 });
 await renderer.compileAsync(scene, camera);
 renderer.render(scene, camera);
@@ -50,4 +53,6 @@ controls.minDistance = distance * .4;
 controls.maxDistance = distance * 2;
 controls.update();
 controls.addEventListener('change', () => renderer.render(scene, camera));
-await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(re
+await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+renderer.render(scene, camera);
+window.__PRODUCT_EVIDENCE__ = Object.freeze({ category, index, name: product.name, metadata: product.userData, bounds: { min: bounds.min.toArray(), max: bounds.max.toArray(), size: size.toArray() }, meshes, stats: { ...renderer.info.render }, camera: camera.position.toArray(), ready: true });

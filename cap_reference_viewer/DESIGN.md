@@ -1,0 +1,3 @@
+# Cap reference viewer
+Single interactive Three.js object study. Warm white gallery, dark navy text, restrained green selected controls. Use shared color, space and radius tokens. Reference panel shows the actual new SKU photos; canvas shows a real open cap mesh with drag orbit and zoom. On narrow screens stack reference below canvas. Korean text uses keep-all wrapping. No decorative animation.
+Geometry inferred from front, side, rear and interior references. Matte twill from actual detail photograph; small photo-derived white embroidery; rear opening and strap with metal buckle. Never imply measured dimensions or recovered PBR maps.

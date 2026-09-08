@@ -32,3 +32,10 @@ pnpm-debug.log*
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# --- 신규 고해상도 갤러리 원본 (2.3GB) ---
+# headwear-detail 1,188MB / clothes-detail 1,147MB. src/ 에서 참조하지 않고
+# scripts/discover-headwear.mjs, discover-clothing-pairs.mjs 로 재수집 가능한
+# 스크레이핑 원본이라 제외. 앱이 실제로 쓰는 컷은 public/products/ 에 커밋됨.
+mlb_shop_dev/reference/headwear-detail/
+mlb_shop_dev/reference/clothes-detail/

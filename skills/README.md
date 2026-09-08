@@ -4,6 +4,7 @@
 
 | 스킬 | 용도 | 상태 |
 |---|---|---|
+| [cap-photo-realism](cap-photo-realism/SKILL.md) | 모자 전용 곡면 틀 + 실제 상품 사진 재질, 중복 디테일 방지, 단품/매장 분리 검증 | 네이비 NY 단품 검증에서 통합; 매장 안정성은 별도 게이트 |
 | [shop-drawing-analysis](shop-drawing-analysis/SKILL.md) | 매장 PDF 전수 분석, 공간·집기 사양, 구역별 확대 캡처와 제작 위임 | MLB 성수점 106페이지 도면 분석에서 정리한 공용 지침 |
 | [shop-vmd-threejs](shop-vmd-threejs/SKILL.md) | 매장 도면·사진 분석, 공간·집기 재구성, 탐색 UI, VMD 검증 | 이번 주택 구현의 교훈을 매장용으로 확장한 공용 지침 |
 | [threejs-house-experience](threejs-house-experience/SKILL.md) | 도면 기반 공간 재구성, 카메라·절개·재질·성능 검토 | 이번에 작성·고도화한 주택용 스킬 보존본 |
