@@ -7,8 +7,13 @@ export function productEvidence(model: THREE.Object3D) {
 		THREE.MeshStandardMaterial | THREE.MeshBasicMaterial
 	>();
 	const instances: string[] = [];
+	const footwear: { slot: number; sku: string; fixture: string; bounds: unknown }[] = [];
 	const clothing: NonNullable<ReturnType<typeof clothingEvidence>>[] = [];
 	model.traverse((object) => {
+		const shoes: unknown = object.userData["footwearPlacements"];
+		if (Array.isArray(shoes)) for (const item of shoes) {
+			if (typeof item?.slot === "number" && typeof item?.sku === "string") footwear.push({ slot: item.slot, sku: item.sku, fixture: String(object.userData["fixtureId"] ?? object.name), bounds: item.bounds });
+		}
 		const placement = clothingEvidence(object);
 		if (placement) clothing.push(placement);
 		const id: unknown = object.userData["productId"];
@@ -29,6 +34,8 @@ export function productEvidence(model: THREE.Object3D) {
 				materials.add(material);
 	});
 	return {
+		footwear,
+		footwearSummary: { placements: footwear.length, distinctSkus: new Set(footwear.map(item => item.sku)).size },
 		clothing,
 		clothingSummary: {
 			placements: clothing.length,

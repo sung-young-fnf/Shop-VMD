@@ -39,3 +39,16 @@ desktop.ini
 # 스크레이핑 원본이라 제외. 앱이 실제로 쓰는 컷은 public/products/ 에 커밋됨.
 mlb_shop_dev/reference/headwear-detail/
 mlb_shop_dev/reference/clothes-detail/
+
+# --- pnpm 로컬 스토어 (루트에 생성된 캐시) ---
+.pnpm-store/
+
+# --- 신발 다각도 갤러리 원본 (793MB / 673개, 2026-09-10) ---
+# headwear-detail·clothes-detail 과 같은 이유로 제외. 앱이 쓰는 컷은
+# public/products/shoes/{cad,cad-photo,refinement}/ 에 커밋됨.
+# 초기 커밋에 들어간 shoes-detail/M26N3ACVSP46N/ 10개는 추적 상태 그대로 남는다.
+mlb_shop_dev/reference/shoes-detail/
+
+# --- 외부 도구 체크아웃 (자체 .git 보유) ---
+# https://github.com/img2threejs/img2 커밋 7aa41b37, 재설치 방법은 mlb_shop_dev/tooling/README.md
+mlb_shop_dev/tooling/img2/

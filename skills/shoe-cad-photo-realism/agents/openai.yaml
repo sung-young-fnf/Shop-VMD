@@ -1,0 +1,4 @@
+interface:
+  display_name: "CAD 신발 사진 재현"
+  short_description: "한 장에서 다각도 사진을 먼저 찾고 CAD·소재·봉제선을 반영한 신발 제작"
+  default_prompt: "$shoe-cad-photo-realism 이 사진과 CAD의 동일 제품 다각도 사진부터 확보하고, 소재와 봉제선을 면별로 재구성해 Three.js로 보여줘."

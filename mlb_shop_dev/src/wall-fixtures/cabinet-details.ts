@@ -47,7 +47,9 @@ export function detailShoeCabinet(
 	group.add(back);
 	for (let level = 0; level < 6; level++) {
 		for (let column = 0; column < 2; column++) {
-			const product = shoe(index + level + column);
+			const slot = (index - 1) * 12 + level * 2 + column;
+			const product = shoe(slot);
+			product.userData["footwearSlot"] = slot;
 			product.position.set(
 				(column - 0.5) * width * 0.53,
 				0.325 + level * 0.358,
@@ -77,9 +79,9 @@ export function detailShoeCabinet(
 		box([width - 0.04, 0.015, 0.012], materials.dark, [0, 0.045, 0.187]),
 	);
 	group.userData["merchandise"] = {
-		kind: "illustrative footwear proxies",
+		kind: "CAD-assisted same-product photographic footwear assortment",
 		count: 12,
-		support: "six shelves; no exact SKU claim",
+		support: "six shelves; verified product identities; display arrangement and dimensions are illustrative",
 	};
 }
 
@@ -109,13 +111,15 @@ export function detailLuminousCabinet(group: THREE.Group, width: number): void {
 		"W02 display-capable luminous acrylic door; merchandise arrangement illustrative";
 }
 
-export function detailSideCabinet(group: THREE.Group): void {
+export function detailSideCabinet(group: THREE.Group, cabinetIndex = 0): void {
 	const back = expandedPanel(1.477, 2.16);
 	back.position.set(0, 1.395, -0.238);
 	group.add(back);
 	for (let level = 0; level < 6; level++) {
 		for (let column = 0; column < 3; column++) {
-			const product = shoe(level + column);
+			const slot = 60 + cabinetIndex * 18 + level * 3 + column;
+			const product = shoe(slot);
+			product.userData["footwearSlot"] = slot;
 			product.position.set((column - 1) * 0.45, 0.325 + level * 0.358, 0);
 			group.add(product);
 		}

@@ -4,6 +4,8 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
+		"img2": "node tooling/img2/bin/img2.mjs",
+		"img2threejs": "node scripts/img2threejs.mjs",
 		"dev": "vite --host 0.0.0.0 --port 5175 --strictPort",
 		"build": "tsc --noEmit && vite build",
 		"check": "tsc --noEmit",

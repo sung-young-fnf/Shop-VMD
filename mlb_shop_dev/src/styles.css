@@ -488,3 +488,12 @@ dialog::backdrop {
  .bottom {bottom:8px}
  .gesture {display:none}
 }
+/* Product inspection remains reachable from the footwear zone. */
+.footwear-detail-link {
+  color: inherit;
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 12px;
+  text-underline-offset: 4px;
+}
+.footwear-detail-link[hidden] { display: none; }

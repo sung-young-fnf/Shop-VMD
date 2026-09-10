@@ -113,9 +113,15 @@ export function batchFixture(group: THREE.Group): void {
 	const batches = new Map<THREE.Material, THREE.BufferGeometry[]>();
 	const multiMaterial: THREE.Mesh[] = [];
 	const productIds: string[] = [];
+	const footwearPlacements: { slot: number; sku: string; bounds: { min: number[]; max: number[] } }[] = [];
 	group.traverse((object) => {
 		const productId: unknown = object.userData["productId"];
 		if (typeof productId === "string") productIds.push(productId);
+		const slot: unknown = object.userData["footwearSlot"];
+		if (typeof slot === "number" && typeof productId === "string") {
+			const bounds = new THREE.Box3().setFromObject(object);
+			footwearPlacements.push({ slot, sku: productId, bounds: { min: bounds.min.toArray(), max: bounds.max.toArray() } });
+		}
 		if (!(object instanceof THREE.Mesh)) return;
 		if (Array.isArray(object.material)) {
 			const geometry = object.geometry.clone();
@@ -157,6 +163,7 @@ export function batchFixture(group: THREE.Group): void {
 		batches.set(material, batch);
 	});
 	group.userData["batchedProductIds"] = productIds;
+	if (footwearPlacements.length) group.userData["footwearPlacements"] = footwearPlacements;
 	group.clear();
 	for (const product of clothing) group.add(product);
 	for (const mesh of multiMaterial) group.add(mesh);

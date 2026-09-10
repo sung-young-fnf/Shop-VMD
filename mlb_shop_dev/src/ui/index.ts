@@ -20,6 +20,12 @@ export function createUI(host: HTMLElement) {
 		throw new TypeError(`Required element ${selector}`);
 	}
 	const scene = element("#scene", HTMLDivElement);
+	const footwearLink = document.createElement("a");
+	footwearLink.href = `${import.meta.env.BASE_URL}footwear-preview.html`;
+	footwearLink.textContent = "신발과 원본 자세히 보기 ↗";
+	footwearLink.className = "footwear-detail-link";
+	footwearLink.hidden = true;
+	element(".selection", HTMLElement).append(footwearLink);
 	element('.gesture', HTMLParagraphElement).textContent = '방향키 이동 · 드래그 회전 · 휠 확대';
 	const dialog = element("dialog", HTMLDialogElement);
 	const zoneList = element(".zone-list", HTMLDivElement);
@@ -111,6 +117,7 @@ export function createUI(host: HTMLElement) {
 			);
 			document.body.classList.toggle("night", state.night);
 			const zone = zones.find((item) => item.id === state.zone);
+			footwearLink.hidden = state.zone !== "footwear";
 			element("#selection-title", HTMLHeadingElement).textContent =
 				fixture?.label ?? zone?.label ?? "성수의 새로운 시선";
 			element("#selection-sub", HTMLSpanElement).textContent =

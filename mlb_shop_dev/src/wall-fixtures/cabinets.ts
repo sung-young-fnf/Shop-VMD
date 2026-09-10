@@ -164,7 +164,7 @@ export function createCabinetWalls(): THREE.Group {
 			);
 		for (const x of [-0.75, 0.75])
 			side.add(box([0.023, 2.5, 0.5], materials.metal, [x, 1.25, 0]));
-		detailSideCabinet(side);
+		detailSideCabinet(side, index);
 		root.add(side);
 		const end = fixture(
 			{
@@ -201,7 +201,8 @@ export function createCabinetWalls(): THREE.Group {
 			]),
 		);
 		end.add(box([0.023, 1.5, 0.03], materials.metal, [0, 1.75, 0]));
-		const product = shoe(index);
+		const product = shoe(96 + index);
+		product.userData["footwearSlot"] = 96 + index;
 		product.position.set(0, 1, 0.25);
 		end.add(
 			product,
